@@ -11,4 +11,5 @@
 #  phone                  :string(255)
 
 class User < ApplicationRecord
+    has_many: orders
 end
