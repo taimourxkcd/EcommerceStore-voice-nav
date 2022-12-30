@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_30_083018) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_30_084518) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "street2"
@@ -19,6 +19,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_30_083018) do
     t.string "zip"
     t.float "lat"
     t.float "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +54,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_30_083018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "customer_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer "order_id"
+    t.decimal "amount"
+    t.string "status"
+    t.string "transaction_id"
+    t.text "transaction_log"
+    t.string "currency"
+    t.string "card_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "suppliers", force: :cascade do |t|
