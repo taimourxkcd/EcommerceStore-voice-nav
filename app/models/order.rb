@@ -15,6 +15,6 @@
 
 class Order < ApplicationRecord
 
-    belongs_to_lazy :user
+    belongs_to :user
 
 end
