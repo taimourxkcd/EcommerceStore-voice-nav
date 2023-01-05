@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_30_084518) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_05_164636) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "street2"
@@ -35,6 +35,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_30_084518) do
     t.string "phone"
     t.integer "location_id"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "file_name"
+    t.integer "file_size"
+    t.string "content_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +72,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_30_084518) do
     t.text "transaction_log"
     t.string "currency"
     t.string "card_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.decimal "price"
+    t.integer "customer_id"
+    t.integer "category_id"
+    t.integer "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
