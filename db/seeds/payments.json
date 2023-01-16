@@ -1,0 +1,23 @@
+[
+  {
+    "amount": 100,
+    "status": "success",
+    "currency": "USD",
+    "card_number": "1111-2222-3333-4444",
+    "order_id": 1
+  },
+  {
+    "amount": 200,
+    "status": "success",
+    "currency": "EUR",
+    "card_number": "5555-6666-7777-8888",
+    "order_id": 1
+  },
+  {
+    "amount": 50,
+    "status": "failed",
+    "currency": "USD",
+    "card_number": "9999-0000-1111-2222",
+    "order_id": 1
+  }
+]

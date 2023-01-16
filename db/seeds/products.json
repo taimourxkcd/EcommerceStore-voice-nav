@@ -1,23 +1,45 @@
 [
   {
-    "title": "Product 1",
-    "description": "This is the first product",
-    "price": 19.99,
-    "customer_id": 2,
+    "title": "Apple MacBook Pro",
+    "description": "13-inch MacBook Pro with Apple M1 chip and 8-core CPU, 128GB SSD storage.",
+    "price": 999.99,
+    "customer_id": 1,
     "category_id": 1
   },
   {
-    "title": "Product 2",
-    "description": "This is the second product",
-    "price": 29.99,
-    "customer_id": 2,
+    "title": "Samsung Galaxy S21",
+    "description": "Samsung Galaxy S21 5G smartphone with 6.2-inch Dynamic AMOLED 2X display, 64MP triple rear camera.",
+    "price": 799.99,
+    "customer_id": 1,
     "category_id": 1
   },
   {
-    "title": "Product 3",
-    "description": "This is the third product",
-    "price": 39.99,
-    "customer_id": 2,
+    "title": "Sony PlayStation 5",
+    "description": "Sony PlayStation 5 gaming console with 8-core AMD Zen 2 CPU, 16GB of GDDR6 RAM.",
+    "price": 499.99,
+    "customer_id": 1,
+    "category_id": 1
+  },
+
+  {
+    "title": "Apple MacBook Pro",
+    "description": "13-inch MacBook Pro with Apple M1 chip and 8-core CPU, 128GB SSD storage.",
+    "price": 999.99,
+    "customer_id": 1,
+    "category_id": 1
+  },
+  {
+    "title": "Samsung Galaxy S21",
+    "description": "Samsung Galaxy S21 5G smartphone with 6.2-inch Dynamic AMOLED 2X display, 64MP triple rear camera.",
+    "price": 799.99,
+    "customer_id": 1,
+    "category_id": 1
+  },
+  {
+    "title": "Sony PlayStation 5",
+    "description": "Sony PlayStation 5 gaming console with 8-core AMD Zen 2 CPU, 16GB of GDDR6 RAM.",
+    "price": 499.99,
+    "customer_id": 1,
     "category_id": 1
   }
 ]

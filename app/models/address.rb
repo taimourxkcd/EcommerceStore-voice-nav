@@ -4,7 +4,6 @@
 #
 #  id               :integer          not null, primary key
 #  street           :string(255)
-#  street2          :string(255)
 #  city             :string(255)
 #  zip              :string(255)
 #  created_at       :datetime

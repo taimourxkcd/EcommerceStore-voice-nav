@@ -30,5 +30,20 @@ json.each do |record|
   Address.create!(record)
 end
 
+json = ActiveSupport::JSON.decode(File.read('db/seeds/locations.json'))
+json.each do |record|
+  Location.create!(record)
+end
+
+json = ActiveSupport::JSON.decode(File.read('db/seeds/orders.json'))
+json.each do |record|
+  Order.create!(record)
+end
+
+json = ActiveSupport::JSON.decode(File.read('db/seeds/payments.json'))
+json.each do |record|
+  Payment.create!(record)
+end
+
 
 

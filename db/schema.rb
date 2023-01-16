@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_16_140921) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_190757) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "city"
@@ -47,6 +47,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_140921) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.float "lat"
+    t.float "lng"
+    t.text "description"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,7 +64,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_140921) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "location_id"
     t.decimal "price"
     t.string "payment_state"
     t.decimal "discount"
@@ -62,14 +71,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_140921) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "customer_id"
+    t.integer "location_id"
   end
 
   create_table "payments", force: :cascade do |t|
     t.integer "order_id"
     t.decimal "amount"
     t.string "status"
-    t.string "transaction_id"
-    t.text "transaction_log"
     t.string "currency"
     t.string "card_number"
     t.datetime "created_at", null: false
@@ -95,6 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_140921) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
