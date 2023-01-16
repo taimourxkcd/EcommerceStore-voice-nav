@@ -1,27 +1,26 @@
 [
   {
-    "street": "John Smith",
-    "city": "rawalpindi",
-    "zip": "555",
-    "lat": "555.256",
-    "lng": "555.562",
+    "street": "123 Main St",
+    "city": "Anytown",
+    "zip": "12345",
+    "lat": "40.123456",
+    "lng": "-73.987654",
     "customer_id": "1"
   },
   {
-    "street": "John Smith",
-    "city": "rawalpindi",
-    "zip": "555",
-    "lat": "555.256",
-    "lng": "555.562",
+    "street": "456 Park Ave",
+    "city": "Smallville",
+    "zip": "67890",
+    "lat": "41.654321",
+    "lng": "-72.876543",
     "customer_id": "1"
   },
   {
-    "street": "John Smith",
-    "city": "rawalpindi",
-    "zip": "555",
-    "lat": "555.256",
-    "lng": "555.562",
+    "street": "789 Elm St",
+    "city": "Bigcity",
+    "zip": "24680",
+    "lat": "39.987654",
+    "lng": "-74.123456",
     "customer_id": "1"
-
   }
 ]

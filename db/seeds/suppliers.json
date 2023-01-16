@@ -1,30 +1,23 @@
 [
-  {
-    "name": "ALKARAM",
-    "address1": "blah blah blah",
-    "country": "pakistan",
-    "city": "rawalpindi",
-    "phone": "555-555-5556"
-  },
-  {
-    "name": "ALKARAM",
-    "address1": "blah blah blah",
-    "country": "pakistan",
-    "city": "rawalpindi",
-    "phone": "555-555-5556"
-  },
-  {
-    "name": "ALKARAM",
-    "address1": "blah blah blah",
-    "country": "pakistan",
-    "city": "rawalpindi",
-    "phone": "555-555-5556"
-  },
-  {
-    "name": "ALKARAM",
-    "address1": "blah blah blah",
-    "country": "pakistan",
-    "city": "rawalpindi",
-    "phone": "555-555-5556"
-  }
+    {
+        "name": "Acme Inc",
+        "address1": "123 Main St",
+        "country": "USA",
+        "city": "Anytown",
+        "phone": "555-555-1234"
+    },
+    {
+        "name": "Beta Corp",
+        "address1": "456 Park Ave",
+        "country": "Canada",
+        "city": "Smallville",
+        "phone": "555-555-5678"
+    },
+    {
+        "name": "Gamma Industries",
+        "address1": "789 Elm St",
+        "country": "Mexico",
+        "city": "Bigcity",
+        "phone": "555-555-9012"
+    }
 ]

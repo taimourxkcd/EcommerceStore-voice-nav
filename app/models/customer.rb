@@ -16,4 +16,10 @@ class Customer < ApplicationRecord
     has_many :addresses
     has_many :products
     has_one  :address
+    belongs_to :user, inverse_of: :customers, optional: true
+    validates :name, presence: true # , format: { with: /\A[a-zA-Z\s]+\z/, message: I18n.t('customer.errors.messages.only_letters') }
+
+    validates :email, format: { with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/ }
+  
+
 end
