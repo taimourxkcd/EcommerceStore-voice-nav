@@ -1,0 +1,27 @@
+[
+  {
+    "street": "John Smith",
+    "city": "rawalpindi",
+    "zip": "555",
+    "lat": "555.256",
+    "lng": "555.562",
+    "customer_id": "1"
+  },
+  {
+    "street": "John Smith",
+    "city": "rawalpindi",
+    "zip": "555",
+    "lat": "555.256",
+    "lng": "555.562",
+    "customer_id": "1"
+  },
+  {
+    "street": "John Smith",
+    "city": "rawalpindi",
+    "zip": "555",
+    "lat": "555.256",
+    "lng": "555.562",
+    "customer_id": "1"
+
+  }
+]

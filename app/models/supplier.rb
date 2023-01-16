@@ -9,11 +9,12 @@
 #  country     :string
 #  city        :string
 #  phone       :string
+#  user_id     :integer 
 #  location_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 class Supplier < ApplicationRecord
-    belongs_to :location
+    has_one :address
 end

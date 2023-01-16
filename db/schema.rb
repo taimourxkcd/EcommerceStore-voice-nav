@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_05_164636) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_140921) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
-    t.string "street2"
-    t.string "string"
     t.string "city"
     t.string "zip"
     t.float "lat"
     t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
+    t.integer "supplier_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -90,11 +90,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_164636) do
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.string "address1"
-    t.string "address2"
     t.string "country"
     t.string "city"
     t.string "phone"
-    t.integer "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -106,6 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_164636) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
+    t.integer "supplier_id"
   end
 
 end
