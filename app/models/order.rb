@@ -17,6 +17,7 @@ class Order < ApplicationRecord
 
     belongs_to :user, optional: true
     has_many :products
+    belongs_to :customer
     has_many :order_items
     belongs_to :location, inverse_of: :orders
 end
