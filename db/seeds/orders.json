@@ -6,7 +6,8 @@
     "tax": 8,
     "user_id": 1,
     "location_id": 1,
-    "customer_id": 1
+    "customer_id": 1,
+    "payment_id": 1
   },
   {
     "price": 50,
@@ -15,7 +16,8 @@
     "tax": 4,
     "user_id": 1,
     "location_id": 1,
-    "customer_id": 1
+    "customer_id": 1,
+    "payment_id": 1
   },
   {
     "price": 75,
@@ -24,7 +26,8 @@
     "tax": 6,
     "user_id": 1,
     "location_id": 1,
-    "customer_id": 1
+    "customer_id": 1,
+    "payment_id": 1
   },
   {
     "price": 125,
@@ -33,6 +36,7 @@
     "tax": 10,
     "user_id": 1,
     "location_id": 1,
-    "customer_id": 1
+    "customer_id": 1,
+    "payment_id": 1
   }
 ]
