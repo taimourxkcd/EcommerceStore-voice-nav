@@ -1,9 +1,30 @@
 [
   {
-    "name": "Pakistan",
-    "lat": 55.2,
-    "lng": 55.3,
-    "description": "this is location",
-    "country": "Pakistan"
+    "name": "Eiffel Tower",
+    "lat": 48.8584,
+    "lng": 2.2945,
+    "description": "An iconic landmark of Paris, France",
+    "country": "France"
+  },
+  {
+    "name": "Statue of Liberty",
+    "lat": 40.6892,
+    "lng": -74.0445,
+    "description": "A symbol of freedom and democracy in New York City, USA",
+    "country": "USA"
+  },
+  {
+    "name": "Great Wall of China",
+    "lat": 40.4319,
+    "lng": 116.5704,
+    "description": "A UNESCO World Heritage Site and one of the world's greatest engineering marvels",
+    "country": "China"
+  },
+  {
+    "name": "Sydney Opera House",
+    "lat": -33.8688,
+    "lng": 151.2093,
+    "description": "An iconic building and performing arts venue in Sydney, Australia",
+    "country": "Australia"
   }
 ]

@@ -12,6 +12,6 @@
 
 class User < ApplicationRecord
     has_many :orders
-    has_many :suppliers
-    has_many :customers
+    has_one :supplier
+    has_one :customer
 end
