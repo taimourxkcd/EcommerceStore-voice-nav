@@ -14,5 +14,5 @@
 #  card_number              :string
 #
 class Payment < ApplicationRecord
-      belongs_to :order, inverse_of: :payments, optional: true
+      belongs_to :order, optional: true
 end
