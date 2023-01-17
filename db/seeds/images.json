@@ -1,0 +1,22 @@
+[
+  {
+    "file_name": "image1.jpg",
+    "file_size": "1MB",
+    "content_type": "image/jpeg"
+  },
+  {
+    "file_name": "image2.png",
+    "file_size": "2MB",
+    "content_type": "image/png"
+  },
+  {
+    "file_name": "image3.gif",
+    "file_size": "500KB",
+    "content_type": "image/gif"
+  },
+  {
+    "file_name": "image4.jpg",
+    "file_size": "1.5MB",
+    "content_type": "image/jpeg"
+  }
+]

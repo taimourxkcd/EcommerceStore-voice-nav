@@ -5,7 +5,8 @@
     "zip": "12345",
     "lat": "40.123456",
     "lng": "-73.987654",
-    "customer_id": "1"
+    "customer_id": "1",
+    "supplier_id": "1"
   },
   {
     "street": "456 Park Ave",
@@ -13,7 +14,8 @@
     "zip": "67890",
     "lat": "41.654321",
     "lng": "-72.876543",
-    "customer_id": "1"
+    "customer_id": "1",
+    "supplier_id": "1"
   },
   {
     "street": "789 Elm St",
@@ -21,6 +23,7 @@
     "zip": "24680",
     "lat": "39.987654",
     "lng": "-74.123456",
-    "customer_id": "1"
+    "customer_id": "1",
+    "supplier_id": "1"
   }
 ]

@@ -5,7 +5,8 @@
     "discount": 0,
     "tax": 8,
     "user_id": 1,
-    "location_id": 1
+    "location_id": 1,
+    "customer_id": 1
   },
   {
     "price": 50,
@@ -13,7 +14,8 @@
     "discount": 10,
     "tax": 4,
     "user_id": 1,
-    "location_id": 1
+    "location_id": 1,
+    "customer_id": 1
   },
   {
     "price": 75,
@@ -21,7 +23,8 @@
     "discount": 0,
     "tax": 6,
     "user_id": 1,
-    "location_id": 1
+    "location_id": 1,
+    "customer_id": 1
   },
   {
     "price": 125,
@@ -29,6 +32,7 @@
     "discount": 5,
     "tax": 10,
     "user_id": 1,
-    "location_id": 1
+    "location_id": 1,
+    "customer_id": 1
   }
 ]

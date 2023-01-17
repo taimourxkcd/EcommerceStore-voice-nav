@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   # resources :users
   resources :customers
   resources :orders
+  resources :users
+  resources :payments
+  resources :address
+  resources :supplier
+  
+
 end

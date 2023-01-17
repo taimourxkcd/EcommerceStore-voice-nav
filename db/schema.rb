@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_16_190757) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_17_131852) do
   create_table "addresses", force: :cascade do |t|
     t.string "street"
     t.string "city"
@@ -60,6 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_190757) do
   create_table "order_items", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_id"
+    t.integer "order_id"
   end
 
   create_table "orders", force: :cascade do |t|
