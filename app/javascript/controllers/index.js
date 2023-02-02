@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import ReactController from "./react_controller"
 application.register("react", ReactController)
+
+import UserController from "./user_controller";
+application.register("react", UserController);

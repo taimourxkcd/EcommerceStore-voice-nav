@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
    root "users#index"
 
+  #  get '/display', to: 'users#display'
+
   # resources :users
   resources :customers
   resources :orders

@@ -3,8 +3,27 @@ class UsersController < ApplicationController
     def index
         @user = User.all
         
-    
+    #    @data1 = 'Hello world! Im the best'
+    # @data2 = "data2 here Im better"
+    # render :json => {
+    #   message: {
+    #     data1: @data1,
+    #     data2: @data2 
+    #   }
+    # }
     end
+
+      def display
+    @data1 = 'Hello world! Im the best'
+    @data2 = "data2 here Im better"
+    render :json => {
+      message: {
+        data1: @data1,
+        data2: @data2 
+      }
+    }
+
+  end
 
     def create
         @user = User.new(user_params)

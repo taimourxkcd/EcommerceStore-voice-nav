@@ -1,0 +1,3 @@
+we register all of the controllers inside the index.js file
+
+once you have registered that, you need to make sure to extend the controller as well
