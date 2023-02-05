@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Apple MacBook Pro",
+    "description": "13-inch MacBook Pro with Apple M1 chip and 8-core CPU, 128GB SSD storage.",
+    "price": 999.99,
+    "customer_id": 1,
+    "image_id": 1,
+
+    "category_id": 1
+  },
+  {
+    "title": "Samsung Galaxy S21",
+    "description": "Samsung Galaxy S21 5G smartphone with 6.2-inch Dynamic AMOLED 2X display, 64MP triple rear camera.",
+    "price": 799.99,
+    "customer_id": 1,
+    "image_id": 1,
+    "category_id": 1
+  },
+  {
+    "title": "Sony PlayStation 5",
+    "description": "Sony PlayStation 5 gaming console with 8-core AMD Zen 2 CPU, 16GB of GDDR6 RAM.",
+    "price": 499.99,
+    "customer_id": 1,
+    "image_id": 1,
+    "category_id": 1
+  },
+  {
+    "title": "Honda Civic",
+    "description": "This is a 2020 Honda Civic with a 1.5L Turbocharged engine and CVT transmission. It has a sleek design and advanced technology features.",
+    "price": 19999,
+    "customer_id": 1,
+    "image_id": 1,
+    "category_id": 1
+  },
+  {
+    "title": "Toyota Camry",
+    "description": "This is a 2019 Toyota Camry with a 2.5L engine and 8-speed automatic transmission. It offers a comfortable ride and a reputation for reliability.",
+    "price": 18999,
+    "customer_id": 1,
+    "image_id": 1,
+    "category_id": 1
+  },
+  {
+    "title": "Levi's Jeans",
+    "description": "This is a pair of Levi's 501 Original Fit Jeans in a classic blue color. Made with 100% cotton denim and featuring a button fly.",
+    "price": 49.99,
+    "customer_id": 1,
+    "image_id": 1,
+    "category_id": 2
+  },
+  {
+    "title": "Nike T-Shirt",
+    "description": "This is a Nike Dri-FIT T-Shirt in a white color. Made with a soft, lightweight fabric that wicks away sweat to keep you cool and comfortable.",
+    "price": 29.99,
+    "customer_id": 1,
+    "image_id": 1,
+    "category_id": 2
+  }
+]
