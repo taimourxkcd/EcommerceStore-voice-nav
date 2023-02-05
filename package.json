@@ -12,6 +12,10 @@
     "stimulus": "^3.2.1"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.js=jsx"
+    "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds --loader:.js=jsx",
+    "start": "node esbuild-dev.config.js"
+  },
+  "devDependencies": {
+    "chokidar": "^3.5.3"
   }
 }
