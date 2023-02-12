@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     #     data2: @data2 
     #   }
     # }
-    end
+end
 
       def display
     @data1 = 'Hello world! Im the best'
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       }
     }
 
-  end
+    end
 
     def create
         @user = User.new(user_params)

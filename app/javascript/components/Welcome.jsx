@@ -1,8 +1,14 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
 
-function Welcome() {
-  const e = React.createElement;
-  return e("h1", null, "Hello World");
+class Welcome extends React.Component {
+  render(){
+    return (
+      <div> Welcome rendered in react </div>
+    )
+  }
 }
 
-export default Welcome;
+
+const welcome = ReactDOM.createRoot(document.getElementById("welcome"))
+welcome.render(<Welcome />);

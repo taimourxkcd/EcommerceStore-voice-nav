@@ -7,10 +7,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ecommerce_store_vc
+  database: ecommerce_store_vc2
   pool: 5
   username:
-  password:
+  password: 
   timeout: 5000
 
 
@@ -20,7 +20,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: ecommerce_store_vc
+  database: ecommerce_store_vc2
   pool: 5
   username:
   password:
