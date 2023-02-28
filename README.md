@@ -1,25 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+install postgresql
+sudo apt-get install postgresql postgresql-contrib
 
-Things you may want to cover:
+start postgresql server
+service postgresql start
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-Hello this is Mohsin
-
-JUST TESTING TO SEE IF THE RESTORE WAS SUCCESSFUL
+service postgresql status
