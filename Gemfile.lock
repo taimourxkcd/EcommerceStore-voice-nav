@@ -191,6 +191,8 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
+    react-rails-img (0.1.6)
+      react-rails
     redis (4.8.0)
     regexp_parser (2.6.2)
     reline (0.3.2)
@@ -263,6 +265,7 @@ DEPENDENCIES
   rack-cors (~> 1.1)
   rails (~> 7.0.4)
   react-rails
+  react-rails-img
   redis (~> 4.0)
   sassc-rails
   selenium-webdriver
@@ -278,4 +281,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.4.1
+   2.4.6
