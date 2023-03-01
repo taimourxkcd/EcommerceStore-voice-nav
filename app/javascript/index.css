@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+:root{
+  --color-131921: #131921;
+}
+
 body{
   font-family: "Rubic", sans-serif;
 }
@@ -15,3 +19,10 @@ a{
   display: inline-block;
 }
 
+/* Header part */
+
+.header-top-strip{
+  background-color: var(--color-131921);
+}
+
+/* Header part ends here */
