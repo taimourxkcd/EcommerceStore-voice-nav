@@ -12,6 +12,7 @@
   --color-febd69: #febd69;
   --color-232f3e: #232f3e;
   --color-bf4800: #bf4800;
+  --color-f5f5f7: #f5f5f7;
 }
 
 body {
@@ -42,16 +43,16 @@ a {
   gap: 30px;
 }
 
-.button{
-  background-color: var(--color-232f3e) ;
-  color: white  ;
+.button {
+  background-color: var(--color-232f3e);
+  color: white;
   font-size: 14px;
   padding: 13px 33px;
   border-radius: 25px;
 }
 
-.button:hover{
-  background-color: var(--color-febd69) ;
+.button:hover {
+  background-color: var(--color-febd69);
   color: #131921;
 }
 
@@ -139,7 +140,7 @@ footer .input-group-text {
   margin-right: 75px;
 }
 
-.fix-size{
+.fix-size {
   /* max-width: 300px; */
 }
 
@@ -206,8 +207,19 @@ footer .input-group-text {
   letter-spacing: 0.4px;
 }
 
-.small-banner{
+.small-banner {
   width: 49%;
 }
+
+/* Home Wrapper 2 */
+
+.home-wrapper-2{
+  background-color: var(--color-f5f5f7);
+  
+}
+
+
+/* Home Wrapper 2 ends here */
+
 
 /* Home page ends here */
