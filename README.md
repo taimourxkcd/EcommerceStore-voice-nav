@@ -86,11 +86,8 @@ Clone this repository to your desired folder:
 Install this project with:
 
 
-
 ```sh
-  
-  this section will be updated soon
-  
+ this section will be updated soon
 ```
 
 
@@ -99,8 +96,8 @@ Install this project with:
 To run the project, execute the following command:
 
 
-```
-  npm start
+```sh
+ this section will be updated soon
 ```
 
 ### Testing
@@ -114,9 +111,9 @@ To run the project, execute the following command:
 ### Deployment
 
 You can deploy this project using:
-
--  this section will be updated soon
-
+```sh
+ this section will be updated soon
+```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
