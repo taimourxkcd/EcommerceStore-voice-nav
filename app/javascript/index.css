@@ -44,6 +44,12 @@ a {
   gap: 30px;
 }
 
+.card-wrapper{
+    background-color: white;
+  box-shadow: 0 0 10px #0000001a;
+  padding: 15px;
+}
+
 .button {
   background-color: var(--color-232f3e);
   color: white;
@@ -255,5 +261,8 @@ footer .input-group-text {
   border-right: 1px solid var(--color-ededed);
 }
 /* categories section end here */
+
+
+/*  */
 
 /* Home page ends here */
