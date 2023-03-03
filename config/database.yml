@@ -26,3 +26,10 @@ test:
   password:
   timeout: 5000
 
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"]%>
+  database: ecommerce_store_vc2_deploy_production
+  username: ecommerce_store_vc2_deploy
+  password: <%= ENV['ECOMMERCE_STORE_VC2_DEPLOY_DATABASE_PASSWORD'] %>
+
