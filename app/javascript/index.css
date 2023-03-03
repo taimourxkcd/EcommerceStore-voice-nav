@@ -378,8 +378,52 @@ footer .input-group-text {
   background-color: white;
 }
 
-
-
 /* Special Product ends here */
+
+/* famous products */
+
+.famous-card .famous-content {
+  top: 3%;
+  left: 5%;
+}
+
+.famous-card img {
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  height: 400px;
+}
+
+.famous-content h5 {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 400px;
+  color: white;
+  margin-bottom: 7px;
+}
+.famous-content h6 {
+  font-size: 20px;
+  line-height: 17px;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+}
+.famous-content p {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 100;
+  color: white;
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  position: relative;
+  top: 50px;
+}
+
+/* famous products end here */
 
 /* Home page ends here */
