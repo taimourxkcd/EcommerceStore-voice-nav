@@ -210,6 +210,22 @@ const OurStore = () => {
                     <option value="created-descending">Date, new to old</option>
                   </select>
                 </div>
+
+                <div className="d-flex align-items-center gap-10">
+                  <p casssName="mb-0">Sort By:</p>
+                  <select name="" className="form-control form-select" id="">
+                    <option value="manual">Featured</option>
+                    <option value="best-selling" selected="selected">
+                      Best Selling
+                    </option>
+                    <option value="title-ascending">Alhabetically, A-Z</option>
+                    <option value="title-descending">Alhabetically, Z-A</option>
+                    <option value="price-ascending">Price, Low to High</option>
+                    <option value="price-descending">Price, High to Low</option>
+                    <option value="created-ascending">Date, old to new</option>
+                    <option value="created-descending">Date, new to old</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
