@@ -195,36 +195,61 @@ const OurStore = () => {
             </div>
             <div className="col-9">
               <div className="filter-sort-grid">
-                <div className="d-flex align-items-center gap-10">
-                  <p casssName="mb-0">Sort By:</p>
-                  <select name="" className="form-control form-select" id="">
-                    <option value="manual">Featured</option>
-                    <option value="best-selling" selected="selected">
-                      Best Selling
-                    </option>
-                    <option value="title-ascending">Alhabetically, A-Z</option>
-                    <option value="title-descending">Alhabetically, Z-A</option>
-                    <option value="price-ascending">Price, Low to High</option>
-                    <option value="price-descending">Price, High to Low</option>
-                    <option value="created-ascending">Date, old to new</option>
-                    <option value="created-descending">Date, new to old</option>
-                  </select>
-                </div>
+                <div className="d-flex justify-content-between align-items-center">
+                  <div className="d-flex align-items-center gap-10">
+                    <p casssName="mb-0 d-block" style={{"width": "100px", "margin-bottom": "0"}}>Sort By:</p>
+                    <select name="" className="form-control form-select" id="">
+                      <option value="manual">Featured</option>
+                      <option value="best-selling" selected="selected">
+                        Best Selling
+                      </option>
+                      <option value="title-ascending">
+                        Alhabetically, A-Z
+                      </option>
+                      <option value="title-descending">
+                        Alhabetically, Z-A
+                      </option>
+                      <option value="price-ascending">
+                        Price, Low to High
+                      </option>
+                      <option value="price-descending">
+                        Price, High to Low
+                      </option>
+                      <option value="created-ascending">
+                        Date, old to new
+                      </option>
+                      <option value="created-descending">
+                        Date, new to old
+                      </option>
+                    </select>
+                  </div>
+                  <div className="d-flex align-items-center gap-10">
+                    <p className="totalproducts mb-0">21 Products</p>
+                    <div className="d-flex gap-10 align-items-center grid">
+                      <img
+                        src={require("../../Public/images/gr4.svg")}
+                        alt="grid"
+                        className="d-block img-fluid"
+                      />
+                      <img
+                        src={require("../../Public/images/gr3.svg")}
+                        alt="grid"
+                        className="d-block img-fluid"
+                      />
 
-                <div className="d-flex align-items-center gap-10">
-                  <p casssName="mb-0">Sort By:</p>
-                  <select name="" className="form-control form-select" id="">
-                    <option value="manual">Featured</option>
-                    <option value="best-selling" selected="selected">
-                      Best Selling
-                    </option>
-                    <option value="title-ascending">Alhabetically, A-Z</option>
-                    <option value="title-descending">Alhabetically, Z-A</option>
-                    <option value="price-ascending">Price, Low to High</option>
-                    <option value="price-descending">Price, High to Low</option>
-                    <option value="created-ascending">Date, old to new</option>
-                    <option value="created-descending">Date, new to old</option>
-                  </select>
+                      <img
+                        src={require("../../Public/images/gr2.svg")}
+                        alt="grid"
+                        className="d-block img-fluid"
+                      />
+
+                      <img
+                        src={require("../../Public/images/gr.svg")}
+                        alt="grid"
+                        className="d-block img-fluid"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

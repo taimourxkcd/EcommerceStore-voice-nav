@@ -503,3 +503,10 @@ footer .input-group-text {
 }
 
 /* Our Store Ends here */
+.grid img{
+  width: 35px;
+  height: 35px;
+  background-color: #f2f2f2;
+  padding: 8px;
+  border-radius: 3px;
+}
