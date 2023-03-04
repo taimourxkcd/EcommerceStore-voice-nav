@@ -45,6 +45,12 @@ const ProductCard = (props) => {
               edit={false}
               activeColor="#ffc700"
             ></ReactStars>
+            <p className={`description ${grid === 12 ? "d-block" : "d-none"}`}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nihil
+              dolor alias dignissimos soluta numquam cumque ratione, voluptates
+              exercitationem. Dolor odit rerum ad laborum, quis dolore corrupti
+              incidunt. Sapiente, odit!
+            </p>
             <p className="price">PKR 100</p>
           </div>
           <div className="action-bar position-absolute">
@@ -70,7 +76,7 @@ const ProductCard = (props) => {
       </div>
       <div
         className={` ${
-          location.pathname === "/store" ? `col-${grid}` : "col-3"
+          location.pathname === "/store" ? `gr-${grid}` : "col-3"
         }`}
       >
         <Link className="product-card position-relative">
@@ -103,6 +109,12 @@ const ProductCard = (props) => {
               edit={false}
               activeColor="#ffc700"
             ></ReactStars>
+            <p className={`description ${grid === 12 ? "d-block" : "d-none"}`}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nihil
+              dolor alias dignissimos soluta numquam cumque ratione, voluptates
+              exercitationem. Dolor odit rerum ad laborum, quis dolore corrupti
+              incidunt. Sapiente, odit!
+            </p>
             <p className="price">PKR 100</p>
           </div>
           <div className="action-bar position-absolute">

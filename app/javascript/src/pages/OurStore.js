@@ -236,7 +236,7 @@ const OurStore = () => {
                     <div className="d-flex gap-10 align-items-center grid">
                       <img
                         onClick={() => {
-                          setGrid(4);
+                          setGrid(3);
                         }}
                         src={require("../../Public/images/gr4.svg")}
                         alt="grid"
@@ -244,7 +244,7 @@ const OurStore = () => {
                       />
                       <img
                         onClick={() => {
-                          setGrid(3);
+                          setGrid(4);
                         }}
                         src={require("../../Public/images/gr3.svg")}
                         alt="grid"
