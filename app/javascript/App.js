@@ -6,6 +6,7 @@ import Contact from "./src/pages/Contact";
 import OurStore from "./src/pages/OurStore";
 import Layout from "./src/components/Layout";
 import Blog from "./src/pages/Blog";
+import CompareProduct from "./src/pages/CompareProduct";
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="contact" element={<Contact/>}/>
             <Route path="store" element={<OurStore/>}/>
             <Route path="blogs" element={<Blog/>}/>
+            <Route path="compare-product" element={<CompareProduct/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
