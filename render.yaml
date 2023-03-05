@@ -1,20 +1,22 @@
 databases:
-  - name: postgres
+  - name: ecommercestore-voice-nav
+    databaseName: ecommercestore-voice-nav
+    user: ecommercestore-voice-nav
     ipAllowList: []
 
 services:
   - type: web
-    name: rails
+    name: ecommercestore-voice-nav
     plan: free
     env: ruby
-    buildCommand: "./bin/ecommerce-build.sh"
-    startCommand: bundle exec rails bin/dev
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: RAILS_MASTER_KEY
         sync: false
       - key: DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: ecommercestore-voice-nav
           property: connectionString
   - type: redis
     name: redis
