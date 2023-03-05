@@ -7,6 +7,7 @@ import OurStore from "./src/pages/OurStore";
 import Layout from "./src/components/Layout";
 import Blog from "./src/pages/Blog";
 import CompareProduct from "./src/pages/CompareProduct";
+import Wishlist from "./src/pages/Wishlist";
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="store" element={<OurStore/>}/>
             <Route path="blogs" element={<Blog/>}/>
             <Route path="compare-product" element={<CompareProduct/>}/>
+            <Route path="wishlist" element={<Wishlist/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
