@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # end
 
   root "users#index"
-  get "*path", to: "users#index", constraints: ->(request) { request.format.html? }
+  get "*path", to: "users#index", constraints: ->(request) { request.format.html? }, , via: :all
   # get "/api/users", to: "api/users#index"
 
   resources :orders
