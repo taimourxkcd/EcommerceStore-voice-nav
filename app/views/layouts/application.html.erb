@@ -8,12 +8,8 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <% if Rails.env.development? %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-<% else %>
-  <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
-<% end %>
 
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
   </head>

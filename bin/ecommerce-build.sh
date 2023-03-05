@@ -7,6 +7,7 @@ bundle install
 rm -rf public
 # build
 npm install && npm run build
+yarn build
 bundle exec rails assets:precompile
 # bundle exec rails assets:clean
 bundle exec rails db:migrate
