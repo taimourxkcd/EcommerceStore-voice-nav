@@ -8,7 +8,9 @@ import Layout from "./src/components/Layout";
 import Blog from "./src/pages/Blog";
 import CompareProduct from "./src/pages/CompareProduct";
 import Wishlist from "./src/pages/Wishlist";
-
+import Login from "./src/pages/Login";
+import Signup from "./src/pages/Login";
+import ForgotPassword from "./src/pages/ForgotPassword";
 
 const App = () => {
 
@@ -24,6 +26,9 @@ const App = () => {
             <Route path="blogs" element={<Blog/>}/>
             <Route path="compare-product" element={<CompareProduct/>}/>
             <Route path="wishlist" element={<Wishlist/>}/>
+            <Route path="login" element={<Login/>}/>
+            <Route path="signup" element={<Signup/>}/>
+            <Route path="forgotpassword" element={<ForgotPassword/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -79,7 +79,7 @@ const Header = () => {
                 </div>
                 <div>
                   <Link
-                    to="/cart"
+                    to="/login"
                     className="d-flex align-items-center gap-10 text-white"
                   >
                     <img
