@@ -8,7 +8,7 @@ rm -rf public
 # build
 npm install && npm run build
 bundle exec rails assets:precompile
-bundle exec rails assets:clean
+# bundle exec rails assets:clean
 bundle exec rails db:migrate
 
 # postbuild
