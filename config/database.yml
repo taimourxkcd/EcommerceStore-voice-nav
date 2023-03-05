@@ -4,6 +4,17 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem "sqlite3"
 #
+
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  database: ecommerce_store_vc2
+  pool: 5
+  username:
+  password:
+  timeout: 5000
+
+
 development:
   adapter: postgresql
   encoding: unicode
@@ -27,7 +38,7 @@ test:
   timeout: 5000
 
 production:
-  <<: *default
+  <<: *defaults
   url: <%= ENV["DATABASE_URL"]%>
   database: ecommerce_store_vc2_deploy_production
   username: ecommerce_store_vc2_deploy
