@@ -9,7 +9,7 @@ services:
     name: ecommercestore-voice-nav
     plan: free
     env: ruby
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "./bin/ecommerce-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: RAILS_MASTER_KEY
