@@ -8,7 +8,7 @@ services:
     plan: free
     env: ruby
     buildCommand: "./bin/ecommerce-build.sh"
-    startCommand: bundle exec rails s
+    startCommand: bundle exec rails bin/dev
     envVars:
       - key: RAILS_MASTER_KEY
         sync: false
