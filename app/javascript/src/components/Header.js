@@ -30,7 +30,7 @@ const Header = () => {
           <div className="row align-items-center">
             <div className="col-2">
               <h2>
-                <Link className="text-white ">Online Store</Link>
+                <div className="text-white ">Online Store</div>
               </h2>
             </div>
             <div className="col-5">

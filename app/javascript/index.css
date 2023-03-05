@@ -273,7 +273,7 @@ footer .input-group-text {
 }
 /* categories section end here */
 
-/* Blog part  */
+/* Blog page  */
 
 .blog-card {
   background-color: white;
@@ -308,7 +308,27 @@ footer .input-group-text {
   font-size: 13px;
   line-height: var(--color-777777);
 }
-/* Blog part ends here */
+/* Blog page ends here */
+
+/* Single Blog starts here */
+
+.single-blog-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-1c1c1b);
+}
+
+.single-blog-card a {
+  font-size: 18px;
+  color: var(--color-777777);
+  margin-bottom: 20px;
+}
+.single-blog-card p {
+  color: var(--color-777777);
+  font-size: 14px;
+}
+
+/* Single Blog page ends here */
 
 /* Product Card */
 
@@ -641,7 +661,7 @@ footer .input-group-text {
 
 /* Login page */
 
-.auth-card{
+.auth-card {
   padding: 20px;
   background-color: white;
   width: 500px;
@@ -649,18 +669,18 @@ footer .input-group-text {
   border-radius: 10px;
 }
 
-.auth-card h3{
+.auth-card h3 {
   font-size: 19px;
   font-weight: 500;
   color: var(--color-777777);
 }
 
-.auth-card p{
+.auth-card p {
   font-size: 13px;
   color: var(--color-777777);
 }
 
-.auth-card .form-control{
+.auth-card .form-control {
   height: 50px;
   background-color: var(--color-f5f5f7);
   color: var(--color-131921);
@@ -669,7 +689,7 @@ footer .input-group-text {
   border-color: transparent;
 }
 
-.auth-card a{
+.auth-card a {
   font-size: 14px;
   font-weight: 400;
   color: var(--color-1c1c1b);
@@ -678,13 +698,11 @@ footer .input-group-text {
 .auth-card .signup {
   background-color: var(--color-febd69);
   color: var(--color-131921);
-
 }
 
 .auth-card .signup:hover {
   background-color: var(--color-131921);
   color: white;
-
 }
 
 /* login page ends here */
