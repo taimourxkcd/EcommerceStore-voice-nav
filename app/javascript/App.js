@@ -10,6 +10,7 @@ import CompareProduct from "./src/pages/CompareProduct";
 import Wishlist from "./src/pages/Wishlist";
 import Login from "./src/pages/Login";
 import Signup from "./src/pages/Signup";
+import Resetpassword from "./src/pages/Resetpassword";
 import ForgotPassword from "./src/pages/ForgotPassword";
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="login" element={<Login/>}/>
             <Route path="signup" element={<Signup/>}/>
             <Route path="forgot-password" element={<ForgotPassword/>}/>
+            <Route path="reset-password" element={<Resetpassword/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
