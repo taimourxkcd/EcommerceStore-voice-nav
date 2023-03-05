@@ -9,7 +9,7 @@ import Blog from "./src/pages/Blog";
 import CompareProduct from "./src/pages/CompareProduct";
 import Wishlist from "./src/pages/Wishlist";
 import Login from "./src/pages/Login";
-import Signup from "./src/pages/Login";
+import Signup from "./src/pages/Signup";
 import ForgotPassword from "./src/pages/ForgotPassword";
 
 const App = () => {
