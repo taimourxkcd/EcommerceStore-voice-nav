@@ -12,5 +12,5 @@ bundle exec rails assets:clean
 bundle exec rails db:migrate
 
 # postbuild
-cp -a app/assets/build/. public/
+cp -a app/assets/builds/. public/
 
