@@ -28,7 +28,7 @@ const App = () => {
             <Route path="wishlist" element={<Wishlist/>}/>
             <Route path="login" element={<Login/>}/>
             <Route path="signup" element={<Signup/>}/>
-            <Route path="forgotpassword" element={<ForgotPassword/>}/>
+            <Route path="forgot-password" element={<ForgotPassword/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
