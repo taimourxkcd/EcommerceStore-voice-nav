@@ -10,7 +10,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true %>
+    <% if Rails.env.production? %>
+  <%= javascript_include_tag "/app/assets/builds/application.js", "data-turbo-track": "reload", defer: true %>
+<% else %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+<% end %>
+
   </head>
 
   <body>
