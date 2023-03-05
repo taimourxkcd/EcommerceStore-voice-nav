@@ -12,6 +12,7 @@ import Login from "./src/pages/Login";
 import Signup from "./src/pages/Signup";
 import Resetpassword from "./src/pages/Resetpassword";
 import ForgotPassword from "./src/pages/ForgotPassword";
+import SingleBlog from "./src/pages/SingleBlog";
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="contact" element={<Contact/>}/>
             <Route path="store" element={<OurStore/>}/>
             <Route path="blogs" element={<Blog/>}/>
+            <Route path="blog/:id" element={<SingleBlog/>}/>
             <Route path="compare-product" element={<CompareProduct/>}/>
             <Route path="wishlist" element={<Wishlist/>}/>
             <Route path="login" element={<Login/>}/>
