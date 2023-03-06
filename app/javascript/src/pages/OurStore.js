@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import ReactStars from "react-rating-stars-component";
-import ProductCard from "../components/ProductCard"
+import ProductCard from "../components/ProductCard";
 import Color from "../components/Color";
 
 const OurStore = () => {
   const [grid, setGrid] = useState(4);
-  
 
   return (
     <div>
@@ -83,7 +82,7 @@ const OurStore = () => {
                   <h5 className="sub-title">Colors</h5>
 
                   <div className="d-flex flex-wrap">
-                  <Color/>
+                    <Color />
                   </div>
                   <h5 className="sub-title">Size</h5>
 
