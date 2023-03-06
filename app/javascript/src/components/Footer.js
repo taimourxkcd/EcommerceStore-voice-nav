@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { BsLinkedin, BsGithub, BsYoutube, BsInstagram  } from "react-icons/bs";
+import { BsLinkedin, BsGithub, BsYoutube, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -60,20 +60,34 @@ const Footer = () => {
                 </a>
               </div>
               <div className="social-icons d-flex align-items-center gap-30 mt-4 ">
-                <a className="text-white" href="#"><BsLinkedin className=" fs-5"/>  </a>
-                <a className="text-white" href="#"><BsInstagram className=" fs-5"/> </a>
-                <a className="text-white" href="#"><BsGithub className=" fs-5"/> </a>
-                <a className="text-white" href="#"><BsYoutube className=" fs-5"/> </a>
+                <a className="text-white" href="#">
+                  <BsLinkedin className=" fs-5" />{" "}
+                </a>
+                <a className="text-white" href="#">
+                  <BsInstagram className=" fs-5" />{" "}
+                </a>
+                <a className="text-white" href="#">
+                  <BsGithub className=" fs-5" />{" "}
+                </a>
+                <a className="text-white" href="#">
+                  <BsYoutube className=" fs-5" />{" "}
+                </a>
               </div>
             </div>
             <div className="col-3">
               <h4 className="text-white mb-4">Information</h4>
 
               <div className="footer-links d-flex flex-column">
-                <Link className="text-white py-2 mb-1">Privacy Policy</Link>
-                <Link className="text-white py-2 mb-1">Refund Policy</Link>
-                <Link className="text-white py-2 mb-1">Shipping Policy</Link>
-                <Link className="text-white py-2 mb-1">
+                <Link to="/privacy-policy" className="text-white py-2 mb-1">
+                  Privacy Policy
+                </Link>
+                <Link to="/refund-policy" className="text-white py-2 mb-1">
+                  Refund Policy
+                </Link>
+                <Link to="/shipping-policy" className="text-white py-2 mb-1">
+                  Shipping Policy
+                </Link>
+                <Link to="/term-conditions" className="text-white py-2 mb-1">
                   Terms and Conditions
                 </Link>
                 <Link className="text-white py-2 mb-1">Blogs</Link>
