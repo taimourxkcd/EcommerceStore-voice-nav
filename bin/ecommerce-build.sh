@@ -2,7 +2,7 @@
 # exit on error
 set -o errexit
 
-rails assets:clobber
+
 bundle install
 # clean
 rm -rf public
