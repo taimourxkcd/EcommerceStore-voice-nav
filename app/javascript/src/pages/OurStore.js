@@ -189,7 +189,7 @@ const OurStore = () => {
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="d-flex align-items-center gap-10">
                     <p
-                      casssName="mb-0 d-block"
+                      className="mb-0 d-block"
                       style={{ width: "100px", "margin-bottom": "0" }}
                     >
                       Sort By:
