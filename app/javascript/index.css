@@ -722,7 +722,7 @@ footer .input-group-text {
 reviews-wrapper h3{
   font-size: 26px;
   color: #1c1c1b;
-  margin-bottom: 10px;
+  margin-bottom: 10px   ;
 
 }
 
@@ -770,4 +770,20 @@ reviews-wrapper h3{
   font-size: l4px;
   color: var(--color-777777);
 }
+
+
+.main-product-image{
+  padding: 20px;
+  background-color: white ;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
 /* Main Product page ends here */
