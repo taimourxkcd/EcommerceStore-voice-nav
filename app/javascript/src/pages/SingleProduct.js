@@ -139,7 +139,7 @@ const SingleProduct = () => {
                       <h3 className="product-heading">Color</h3>
                       <Color />
                     </div>
-                    <div className="d-flex align-items-center gap-15 flex-row mt-2 ">
+                    <div className="d-flex align-items-center gap-15 flex-row mt-2 mb-4 ">
                       <h3 className="product-heading flex-row algin-items-center">
                         Quantity:
                       </h3>
@@ -178,8 +178,8 @@ const SingleProduct = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="border-bottom py-3">
-                      <div className="d-flex gap-10 align-items-center my-2 ">
+                    <div className="py-3">
+                      <div className="d-flex gap-10 align-items-center my-3 ">
                         <h3 className="product-heading">Shipping & Returns</h3>
                         <p className="product-data">
                           Free Shipping and returns available on all orders!{" "}
@@ -189,7 +189,7 @@ const SingleProduct = () => {
                       </div>
                     </div>
                     <div className="border-bottom py-3">
-                      <div className="d-flex gap-10 align-items-center my-2 ">
+                      <div className="d-flex gap-10 my-2 ">
                         <h3 className="product-heading">Copy Product Link</h3>
                         <a
                           href="javascript:void(0)"
@@ -199,8 +199,8 @@ const SingleProduct = () => {
                             );
                           }}
                         >
-                          afadafad
-                        F</a>
+                          Product Link
+                        </a>
                       </div>
                     </div>
                   </div>

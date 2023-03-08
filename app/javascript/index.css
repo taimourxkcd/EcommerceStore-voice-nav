@@ -807,7 +807,7 @@ reviews-wrapper h3 {
 }
 
 .main-product-details {
-  padding: 20px;
+  padding: 30px 20px;
   background-color: white;
 }
 
@@ -853,5 +853,5 @@ t-review {
 }
 
 
-
+  
 /* Main Product page ends here */
