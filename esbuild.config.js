@@ -34,11 +34,21 @@ async function builder() {
   let result = await require("esbuild").build({
     entryPoints: ["application.js"],
     bundle: true,
-    publicPath: "/assets/builds/",
+    publicPath: "/assets",
     loader: { ".js": "jsx" },
+    sourcemap: true,
     outdir: path.join(process.cwd(), "app/assets/builds"),
     absWorkingDir: path.join(process.cwd(), "app/javascript"),
     incremental: true,
+    watch: process.argv.includes("--watch"),
+    plugins: [],
+    loader: {
+      ".js": "jsx",
+      ".jpg": "file",
+      ".png": "file",
+      ".MOV": "file",
+      ".webp": "file",
+    },
     banner: {
       js: ' (() => new EventSource("http://localhost:8082").onmessage = () => location.reload())();',
     },
