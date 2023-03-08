@@ -2,6 +2,11 @@ import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 
+import watchImg from "../../Public/images/watch.jpg";
+import crossImg from "../../Public/images/cross.svg";
+
+
+
 const Wishlist = () => {
   return (
     <>
@@ -13,13 +18,13 @@ const Wishlist = () => {
             <div className="col-3">
               <div className="wishlist-card position-relative">
                 <img
-                  src={require("../../Public/images/cross.svg")}
+                  src={crossImg}
                   alt="cros"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="wishlist-card-image">
                   <img
-                    src={require("../../Public/images/watch.jpg")}
+                    src={watchImg}
                     className="img-fluid w-100 "
                     alt="watch"
                   />
@@ -35,13 +40,13 @@ const Wishlist = () => {
             <div className="col-3">
               <div className="wishlist-card position-relative">
                 <img
-                  src={require("../../Public/images/cross.svg")}
+                  src={crossImg}
                   alt="cros"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="wishlist-card-image">
                   <img
-                    src={require("../../Public/images/watch.jpg")}
+                    src={watchImg}
                     className="img-fluid w-100 "
                     alt="watch"
                   />
@@ -57,13 +62,13 @@ const Wishlist = () => {
             <div className="col-3">
               <div className="wishlist-card position-relative">
                 <img
-                  src={require("../../Public/images/cross.svg")}
+                  src={crossImg}
                   alt="cros"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="wishlist-card-image">
                   <img
-                    src={require("../../Public/images/watch.jpg")}
+                    src={watchImg}
                     className="img-fluid w-100 "
                     alt="watch"
                   />

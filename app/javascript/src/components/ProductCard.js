@@ -1,6 +1,12 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link, useLocation } from "react-router-dom";
+import watchImg from "../../Public/images/watch.jpg"
+import wishImg from "../../Public/images/wish.svg";
+import tvImg from "../../Public/images/tv.jpg";
+import addcartImg from "../../Public/images/add-cart.svg";
+import viewImg from "../../Public/images/view.svg";
+import prodcompareImg from "../../Public/images/prodcompare.svg";
 
 const ProductCard = (props) => {
   const { grid } = props;
@@ -17,17 +23,17 @@ const ProductCard = (props) => {
         <Link to=":id" className="product-card position-relative">
           <div className="wishlist-icon position-absolute">
             <Link>
-              <img src={require("../../Public/images/wish.svg")} alt="wish" />
+              <img src={wishImg} alt="wish" />
             </Link>
           </div>
           <div className="product-image">
             <img
-              src={require("../../Public/images/watch.jpg")}
+              src={watchImg}
               alt="product image"
               className="img-fluid"
             />
             <img
-              src={require("../../Public/images/tv.jpg")}
+              src={tvImg}
               alt="product image"
               className="img-fluid"
             />
@@ -56,16 +62,16 @@ const ProductCard = (props) => {
             <div className="d-flex flex-column gap-15">
               <Link>
                 <img
-                  src={require("../../Public/images/add-cart.svg")}
+                  src={addcartImg}
                   alt="add-cart"
                 />
               </Link>
               <Link>
-                <img src={require("../../Public/images/view.svg")} alt="view" />
+                <img src={viewImg} alt="view" />
               </Link>
               <Link>
                 <img
-                  src={require("../../Public/images/prodcompare.svg")}
+                  src={prodcompareImg}
                   alt="compare"
                 />
               </Link>
@@ -81,17 +87,17 @@ const ProductCard = (props) => {
         <Link className="product-card position-relative">
           <div className="wishlist-icon position-absolute">
             <Link>
-              <img src={require("../../Public/images/wish.svg")} alt="wish" />
+              <img src={wishImg} alt="wish" />
             </Link>
           </div>
           <div className="product-image">
             <img
-              src={require("../../Public/images/watch.jpg")}
+              src={watchImg}
               alt="product image"
               className="img-fluid"
             />
             <img
-              src={require("../../Public/images/tv.jpg")}
+              src={tvImg}
               alt="product image"
               className="img-fluid"
             />
@@ -120,16 +126,16 @@ const ProductCard = (props) => {
             <div className="d-flex flex-column gap-15">
               <Link>
                 <img
-                  src={require("../../Public/images/add-cart.svg")}
+                  src={addcartImg}
                   alt="add-cart"
                 />
               </Link>
               <Link>
-                <img src={require("../../Public/images/view.svg")} alt="view" />
+                <img src={viewImg} alt="view" />
               </Link>
               <Link>
                 <img
-                  src={require("../../Public/images/prodcompare.svg")}
+                  src={prodcompareImg}
                   alt="compare"
                 />
               </Link>

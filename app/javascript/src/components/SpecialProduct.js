@@ -1,6 +1,8 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
+import watchImg from "../../Public/images/watch.jpg";
+
 
 const SpecialProduct = () => {
   return (
@@ -9,7 +11,7 @@ const SpecialProduct = () => {
         <div className="d-flex justify-content-between">
           <div>
             <img
-              src={require("../../Public/images/watch.jpg")}
+              src={watchImg}
               alt="watch"
               className="img-fluid"
             />
