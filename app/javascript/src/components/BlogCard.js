@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import blogImg from "../../Public/images/blog-1.jpg";
 
 const BlogCard = () => {
   return (
@@ -7,7 +8,7 @@ const BlogCard = () => {
       <div className="blog-card"></div>
       <div className="card-image">
         <img
-          src={require("../../Public/images/blog-1.jpg")}
+          src={blogImg}
           alt="blog"
           className="img-fluid w-100"
         />

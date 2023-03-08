@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 import { TbGitCompare } from "react-icons/tb";
 import { AiOutlineHeart } from "react-icons/ai";
 
+import tvImg from "../../Public/images/tv.jpg";
+import headphoneImg from "../../Public/images/headphone.jpg";
+
 const SingleProduct = () => {
   const props = {
     width: 400,
@@ -45,14 +48,14 @@ const SingleProduct = () => {
                   <div className="other-product-images d-flex flex-wrap gap-15">
                     <div>
                       <img
-                        src="https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg"
+                        src={tvImg}
                         alt="watch"
                         className="img-fluid"
                       />
                     </div>
                     <div>
                       <img
-                        src="https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg"
+                        src={headphoneImg}
                         alt="watch"
                         className="img-fluid"
                       />

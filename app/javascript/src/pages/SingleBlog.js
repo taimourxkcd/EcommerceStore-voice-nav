@@ -4,6 +4,7 @@ import BreadCrumb from "../components/BreadCrumb";
 import { Link } from "react-router-dom";
 import {HiOutlineArrowLeft} from "react-icons/hi"
 
+import blogImg from "../../Public/images/blog-1.jpg"
 
 const SingleBlog = () => {
   return (
@@ -23,7 +24,7 @@ const SingleBlog = () => {
                   A Beautiful Sunday Morning Renaissance
                 </h3>
                 <img
-                  src={require("../../Public/images/blog-1.jpg")}
+                  src={blogImg}
                   alt="blog-1"
                   className="img-fluid w-100 my-4"
                 />

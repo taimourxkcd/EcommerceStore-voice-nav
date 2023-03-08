@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { BsLinkedin, BsGithub, BsYoutube, BsInstagram } from "react-icons/bs";
+import newsletterImg from "../../Public/images/newsletter.png";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
             <div className="col-5">
               <div className="footer-top-data d-flex gap-30 align-items-center"></div>
               <img
-                src={require("../../Public/images/newsletter.png")}
+                src={newsletterImg}
                 alt="newsletter"
               />
               <span className="mb-0 text-white h4 ms-4">

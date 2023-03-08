@@ -1,6 +1,12 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
+import compareImg from "../../Public/images/compare.svg";
+import wishlistImg from "../../Public/images/wishlist.svg";
+import userImg from "../../Public/images/user.svg";
+import cartImg from "../../Public/images/cart.svg";
+import menuImg from "../../Public/images/menu.svg";
+
 
 const Header = () => {
   return (
@@ -55,7 +61,7 @@ const Header = () => {
                     className="d-flex align-items-center gap-10 text-white"
                   >
                     <img
-                      src={require("../../Public/images/compare.svg")}
+                      src={compareImg}
                       alt=""
                     />
                     <p className="mb-0">
@@ -69,7 +75,7 @@ const Header = () => {
                     className="d-flex align-items-center gap-10 text-white"
                   >
                     <img
-                      src={require("../../Public/images/wishlist.svg")}
+                      src={wishlistImg}
                       alt="wishlist"
                     />
                     <p className="mb-0">
@@ -83,7 +89,7 @@ const Header = () => {
                     className="d-flex align-items-center gap-10 text-white"
                   >
                     <img
-                      src={require("../../Public/images/user.svg")}
+                      src={userImg}
                       alt="user"
                     />
                     <p className="mb-0">
@@ -94,7 +100,7 @@ const Header = () => {
                 <div>
                   <Link className="d-flex align-items-center gap-10 text-white">
                     <img
-                      src={require("../../Public/images/cart.svg")}
+                      src={cartImg}
                       alt="cart"
                     />
                     <div className="d-flex flex-column gap-10">
@@ -123,7 +129,7 @@ const Header = () => {
                       aria-expanded="false"
                     >
                       <img
-                        src={require("../../Public/images/menu.svg")}
+                        src={menuImg}
                         alt=""
                       />
                       <span className="me-5 d-inline-block">
