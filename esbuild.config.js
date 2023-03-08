@@ -40,6 +40,7 @@ async function builder() {
     outdir: path.join(process.cwd(), "app/assets/builds"),
     absWorkingDir: path.join(process.cwd(), "app/javascript"),
     incremental: true,
+    assetNames: "[name]-[hash].digested",
     watch: process.argv.includes("--watch"),
     plugins: [],
     loader: {
