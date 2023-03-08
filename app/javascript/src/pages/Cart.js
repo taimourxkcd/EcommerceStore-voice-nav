@@ -3,6 +3,7 @@ import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import watchImg from "../../Public/images/watch.jpg";
 import { AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
@@ -57,41 +58,16 @@ const Cart = () => {
                   <h5 className="price">$ 100</h5>
                 </div>
               </div>
-              <div className="cart-data py-3 mb-2 d-flex justify-content-between align-items-center">
-                <div className="cart-col-1 gap-15 d-flex algin-items-center">
-                  <div className="w-25">
-                    <img
-                      src={watchImg}
-                      alt="product img"
-                      className="img-fluid"
-                    />
-                  </div>
-                  <div>
-                    <p>dafasdfas</p>
-                    <p>Size: fasdf</p>
-                    <p>Color: fadsf</p>
-                  </div>
-                </div>
-                <div className="cart-col-2">
-                  <h5 className="price">$ 100</h5>
-                </div>
-                <div className="cart-col-3 d-flex align-items-center gap-15">
-                  <div>
-                    <input
-                      className="form-control"
-                      type="number"
-                      min={1}
-                      max={10}
-                      name=""
-                      id=""
-                    />
-                  </div>
-                  <div>
-                    <AiFillDelete className="text-danger" />
-                  </div>
-                </div>
-                <div className="cart-col-4">
-                  <h5 className="price">$ 100</h5>
+            </div>
+            <div className="col-12 py-2 mt-4">
+              <div className="d-flex justify-content-between align-items-baseline">
+                <Link to="/product" className="button">
+                  Continue Shopping
+                </Link>
+                <div className="d-flex flex-column align-items">
+                  <h4>SubTotal: PKR 1000</h4>
+                  <p>Taxes and Shipping calculated at checkout</p>
+                  <Link to='/checkout' className="button" >Checkout</Link>
                 </div>
               </div>
             </div>
