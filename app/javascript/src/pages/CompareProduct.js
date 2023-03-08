@@ -3,6 +3,11 @@ import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import Color from "../components/Color";
 
+
+import crossImg from "../../Public/images/cross.svg";
+import watchImg from "../../Public/images/watch.jpg";
+
+
 const CompareProduct = () => {
   return (
     <>
@@ -14,13 +19,13 @@ const CompareProduct = () => {
             <div className="col-3">
               <div className="compare-product-card position-relative">
                 <img
-                  src={require("../../Public/images/cross.svg")}
+                  src={crossImg}
                   alt="cros"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="product-card-image">
                   <img
-                    src={require("../../Public/images/watch.jpg")}
+                    src={watchImg}
                     alt="watch"
                   />
                 </div>
@@ -57,13 +62,13 @@ const CompareProduct = () => {
             <div className="col-3">
               <div className="compare-product-card position-relative">
                 <img
-                  src={require("../../Public/images/cross.svg")}
+                  src={crossImg}
                   alt="cros"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="product-card-image">
                   <img
-                    src={require("../../Public/images/watch.jpg")}
+                    src={watchImg}
                     alt="watch"
                   />
                 </div>
@@ -100,13 +105,13 @@ const CompareProduct = () => {
             <div className="col-3">
               <div className="compare-product-card position-relative">
                 <img
-                  src={require("../../Public/images/cross.svg")}
+                  src={crossImg}
                   alt="cros"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="product-card-image">
                   <img
-                    src={require("../../Public/images/watch.jpg")}
+                    src={watchImg}
                     alt="watch"
                   />
                 </div>
@@ -143,13 +148,13 @@ const CompareProduct = () => {
             <div className="col-3">
               <div className="compare-product-card position-relative">
                 <img
-                  src={require("../../Public/images/cross.svg")}
+                  src={crossImg}
                   alt="cros"
                   className="position-absolute cross img-fluid"
                 />
                 <div className="product-card-image">
                   <img
-                    src={require("../../Public/images/watch.jpg")}
+                    src={watchImg}
                     alt="watch"
                   />
                 </div>

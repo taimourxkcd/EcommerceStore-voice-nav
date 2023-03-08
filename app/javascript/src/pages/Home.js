@@ -5,6 +5,32 @@ import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
 
+import mainbannerImg from "../../Public/images/main-banner-1.jpg"
+import cartbanner1Img from "../../Public/images/catbanner-01.jpg"
+import cartbanner2Img from "../../Public/images/catbanner-02.jpg"
+import cartbanner3Img from "../../Public/images/catbanner-03.jpg"
+import cartbanner4Img from "../../Public/images/catbanner-04.jpg"
+import serviceImg from "../../Public/images/service.png"
+import service2Img from "../../Public/images/service-02.png"
+import service3Img from "../../Public/images/service-03.png"
+import service4Img from "../../Public/images/service-04.png"
+import service5Img from "../../Public/images/service-05.png"
+import brand1Img from "../../Public/images/brand-01.png"
+import brand2Img from "../../Public/images/brand-02.png"
+import brand3Img from "../../Public/images/brand-03.png"
+import brand4Img from "../../Public/images/brand-04.png"
+import brand5Img from "../../Public/images/brand-05.png"
+import brand6Img from "../../Public/images/brand-06.png"
+import brand7Img from "../../Public/images/brand-07.png"
+import brand8Img from "../../Public/images/brand-08.png"
+import famous1Img from "../../Public/images/famous-1.webp"
+import famous2Img from "../../Public/images/famous-2f.jpg"
+import famous3Img from "../../Public/images/famous-3b.webp"
+import famous4Img from "../../Public/images/famous-4c.webp"
+import cameraImg from "../../Public/images/camera.jpg"
+import tvImg from "../../Public/images/tv.jpg"
+import headphoneImg from "../../Public/images/headphone.jpg"
+
 const Home = () => {
   return (
     <>
@@ -14,7 +40,7 @@ const Home = () => {
             <div className="col-6">
               <div className="main-banner position-relative">
                 <img
-                  src={require("../../Public/images/main-banner-1.jpg")}
+                  src={mainbannerImg}
                   alt="main banner"
                   className="img-fluid round-3"
                 />
@@ -30,7 +56,7 @@ const Home = () => {
               <div className="d-flex flex-wrap justify-content-between gap-7 align-items-center">
                 <div className="small-banner position-relative fix-size">
                   <img
-                    src={require("../../Public/images/catbanner-01.jpg")}
+                    src={cartbanner1Img}
                     alt="main banner"
                     className="img-fluid round-3"
                   />
@@ -45,7 +71,7 @@ const Home = () => {
                 </div>
                 <div className="small-banner position-relative ">
                   <img
-                    src={require("../../Public/images/catbanner-02.jpg")}
+                    src={cartbanner2Img}
                     alt="main banner"
                     className="img-fluid round-3"
                   />
@@ -60,7 +86,7 @@ const Home = () => {
                 </div>
                 <div className="small-banner position-relative">
                   <img
-                    src={require("../../Public/images/catbanner-03.jpg")}
+                    src={cartbanner3Img}
                     alt="main banner"
                     className="img-fluid round-3"
                   />
@@ -75,7 +101,7 @@ const Home = () => {
                 </div>
                 <div className="small-banner position-relative">
                   <img
-                    src={require("../../Public/images/catbanner-04.jpg")}
+                    src={cartbanner4Img}
                     alt="main banner"
                     className="img-fluid round-3"
                   />
@@ -100,50 +126,35 @@ const Home = () => {
             <div className="col-12">
               <div className="services d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-10">
-                  <img
-                    src={require("../../Public/images/service.png")}
-                    alt=""
-                  />
+                  <img src={serviceImg} alt="" />
                   <div>
                     <h6>Free Shipping</h6>
                     <p className="mb-0">From all orders over PKR50 </p>
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-15">
-                  <img
-                    src={require("../../Public/images/service-02.png")}
-                    alt=""
-                  />
+                  <img src={service2Img} alt="" />
                   <div>
                     <h6>Daily Surprise Offers</h6>
                     <p className="mb-0">Save upto 25% off</p>
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-15">
-                  <img
-                    src={require("../../Public/images/service-03.png")}
-                    alt=""
-                  />
+                  <img src={service3Img} alt="" />
                   <div>
                     <h6>Support 25/7</h6>
                     <p className="mb-0">Shop with an Expert</p>
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-15">
-                  <img
-                    src={require("../../Public/images/service-04.png")}
-                    alt=""
-                  />
+                  <img src={service4Img} alt="" />
                   <div>
                     <h6>Affordable Prices</h6>
                     <p className="mb-0">Get Factory Default Price</p>
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-15">
-                  <img
-                    src={require("../../Public/images/service-05.png")}
-                    alt=""
-                  />
+                  <img src={service5Img} alt="" />
                   <div>
                     <h6>Secure Payments</h6>
                     <p className="mb-0">100% Protected Payments</p>
@@ -166,7 +177,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/camera.jpg")}
+                    src={cameraImg}
                     alt="camera"
                   />
                 </div>
@@ -176,7 +187,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/tv.jpg")}
+                    src={tvImg}
                     alt="camera"
                   />
                 </div>
@@ -186,7 +197,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/headphone.jpg")}
+                    src={headphoneImg}
                     alt="camera"
                   />
                 </div>
@@ -196,7 +207,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/camera.jpg")}
+                    src={cameraImg}
                     alt="camera"
                   />
                 </div>
@@ -206,7 +217,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/camera.jpg")}
+                    src={cameraImg}
                     alt="camera"
                   />
                 </div>
@@ -216,7 +227,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/tv.jpg")}
+                    src={tvImg}
                     alt="camera"
                   />
                 </div>
@@ -226,7 +237,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/headphone.jpg")}
+                    src={headphoneImg}
                     alt="camera"
                   />
                 </div>
@@ -236,7 +247,7 @@ const Home = () => {
                     <p>10 Items</p>
                   </div>
                   <img
-                    src={require("../../Public/images/camera.jpg")}
+                    src={cameraImg}
                     alt="camera"
                   />
                 </div>
@@ -265,7 +276,7 @@ const Home = () => {
             <div className="col-3">
               <div className="famous-card position-relative">
                 <img
-                  src={require("../../Public/images/famous-1.webp")}
+                  src={famous1Img}
                   alt="famous1"
                   className="img-fluid"
                 />
@@ -281,7 +292,7 @@ const Home = () => {
             <div className="col-3">
               <div className="famous-card position-relative">
                 <img
-                  src={require("../../Public/images/famous-2f.jpg")}
+                  src={famous2Img}
                   alt="famous1"
                   className="img-fluid"
                 />
@@ -297,7 +308,7 @@ const Home = () => {
             <div className="col-3">
               <div className="famous-card position-relative">
                 <img
-                  src={require("../../Public/images/famous-3b.webp")}
+                  src={famous3Img}
                   alt="famous1"
                   className="img-fluid "
                 />
@@ -313,7 +324,7 @@ const Home = () => {
             <div className="col-3">
               <div className="famous-card position-relative">
                 <img
-                  src={require("../../Public/images/famous-4c.webp")}
+                  src={famous4Img}
                   alt="famous1"
                   className="img-fluid "
                 />
@@ -367,50 +378,44 @@ const Home = () => {
               <div className="marquee-inner-wrapper card-wrapper">
                 <Marquee className="d-flex">
                   <div className="mx-4 ww-25">
+                    <img src={brand1Img} alt="brand" />
+                  </div>
+                  <div className="mx-4 ww-25">
+                    <img src={brand2Img} alt="brand" />
+                  </div>
+                  <div className="mx-4 ww-25">
                     <img
-                      src={require("../../Public/images/brand-01.png")}
+                      src={brand3Img}
                       alt="brand"
                     />
                   </div>
                   <div className="mx-4 ww-25">
                     <img
-                      src={require("../../Public/images/brand-02.png")}
+                      src={brand4Img}
                       alt="brand"
                     />
                   </div>
                   <div className="mx-4 ww-25">
                     <img
-                      src={require("../../Public/images/brand-03.png")}
+                      src={brand5Img}
                       alt="brand"
                     />
                   </div>
                   <div className="mx-4 ww-25">
                     <img
-                      src={require("../../Public/images/brand-04.png")}
+                      src={brand6Img}
                       alt="brand"
                     />
                   </div>
                   <div className="mx-4 ww-25">
                     <img
-                      src={require("../../Public/images/brand-05.png")}
+                      src={brand7Img}
                       alt="brand"
                     />
                   </div>
                   <div className="mx-4 ww-25">
                     <img
-                      src={require("../../Public/images/brand-06.png")}
-                      alt="brand"
-                    />
-                  </div>
-                  <div className="mx-4 ww-25">
-                    <img
-                      src={require("../../Public/images/brand-07.png")}
-                      alt="brand"
-                    />
-                  </div>
-                  <div className="mx-4 ww-25">
-                    <img
-                      src={require("../../Public/images/brand-08.png")}
+                      src={brand8Img}
                       alt="brand"
                     />
                   </div>
