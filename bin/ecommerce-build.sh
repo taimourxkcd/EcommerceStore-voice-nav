@@ -13,5 +13,5 @@ bundle exec rails assets:precompile
 bundle exec rails db:migrate
 
 # postbuild
-cp -a app/assets/builds/. public/
+cp -a app/assets/builds/. app/assets
 
