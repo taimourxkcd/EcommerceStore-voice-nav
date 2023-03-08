@@ -172,6 +172,9 @@ GEM
       activesupport (= 7.0.4.2)
       bundler (>= 1.15.0)
       railties (= 7.0.4.2)
+    rails-assets-manifest (3.0.0)
+      activesupport (> 4.2)
+      railties (> 4.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -184,6 +187,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
+    rainbow (3.1.1)
     rake (13.0.6)
     react-rails (2.6.2)
       babel-transpiler (>= 0.7.0)
@@ -193,6 +197,12 @@ GEM
       tilt
     react-rails-img (0.1.6)
       react-rails
+    react_on_rails (13.3.2)
+      addressable
+      connection_pool
+      execjs (~> 2.5)
+      rails (>= 5.2)
+      rainbow (~> 3.0)
     redis (4.8.0)
     regexp_parser (2.6.2)
     reline (0.3.2)
@@ -264,8 +274,10 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors (~> 1.1)
   rails (~> 7.0.4)
+  rails-assets-manifest
   react-rails
   react-rails-img
+  react_on_rails
   redis (~> 4.0)
   sassc-rails
   selenium-webdriver
