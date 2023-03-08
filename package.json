@@ -18,10 +18,12 @@
     "react-rating-stars-component": "^2.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
+    "sass": "^1.58.3",
     "stimulus": "^3.2.1"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.js=jsx --loader:.svg=file --loader:.png=file --loader:.jpg=file --loader:.jpeg=file --loader:.webp=file",
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
     "start": "node esbuild-dev.config.js"
   },
   "devDependencies": {
