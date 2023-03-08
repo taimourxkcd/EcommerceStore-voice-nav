@@ -5,7 +5,6 @@ ruby "3.0.2"
 
 gem "react-rails"
 gem "react_on_rails"
-gem "rails-assets-manifest"
 gem "table_print"
 gem "react-rails-img"
 gem "rails", "~> 7.0.4"

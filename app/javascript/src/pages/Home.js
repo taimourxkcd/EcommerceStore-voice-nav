@@ -4,8 +4,6 @@ import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
-import watchImage from "../../../../public/main-banner-1.jpg";
-
 
 const Home = () => {
   return (
@@ -16,7 +14,7 @@ const Home = () => {
             <div className="col-6">
               <div className="main-banner position-relative">
                 <img
-                  src={watchImage}
+                  src={require("../../Public/images/main-banner-1.jpg")}
                   alt="main banner"
                   className="img-fluid round-3"
                 />

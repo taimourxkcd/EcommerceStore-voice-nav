@@ -172,9 +172,6 @@ GEM
       activesupport (= 7.0.4.2)
       bundler (>= 1.15.0)
       railties (= 7.0.4.2)
-    rails-assets-manifest (3.0.0)
-      activesupport (> 4.2)
-      railties (> 4.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -274,7 +271,6 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors (~> 1.1)
   rails (~> 7.0.4)
-  rails-assets-manifest
   react-rails
   react-rails-img
   react_on_rails
