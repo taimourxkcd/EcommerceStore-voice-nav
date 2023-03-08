@@ -4,6 +4,17 @@ const path = require("path");
 const chokidar = require("chokidar");
 const http = require("http");
 
+
+module.exports = {
+  entryPoints: ["app/javascript/application.js"],
+  outdir: "app/assets/builds",
+  bundle: true,
+  minify: true,
+  publicPath: "./",
+  // any other esbuild options you need
+};
+
+
 const clients = [];
 
 http
