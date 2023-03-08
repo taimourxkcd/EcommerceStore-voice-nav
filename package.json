@@ -24,7 +24,7 @@
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.js=jsx --loader:.svg=file --loader:.png=file --loader:.jpg=file --loader:.jpeg=file --loader:.webp=file",
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "start": "node esbuild-dev.config.js"
+    "start": "node esbuild.config.js"
   },
   "devDependencies": {
     "chokidar": "^3.5.3",
