@@ -18,7 +18,7 @@ import PrivacyPolicy from "./src/pages/PrivacyPolicy";
 import ShippingPolicy from "./src/pages/ShippingPolicy";
 import TermsAndConditions from "./src/pages/TermsAndConditions";
 import SingleProduct from "./src/pages/SingleProduct";
-import Cart from '.src/pages/Cart'
+import Cart from './src/pages/Cart'
 
 const App = () => {
   return (
