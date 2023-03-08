@@ -34,6 +34,7 @@ async function builder() {
   let result = await require("esbuild").build({
     entryPoints: ["application.js"],
     bundle: true,
+    publicPath: "/assets/builds/",
     loader: { ".js": "jsx" },
     outdir: path.join(process.cwd(), "app/assets/builds"),
     absWorkingDir: path.join(process.cwd(), "app/javascript"),
