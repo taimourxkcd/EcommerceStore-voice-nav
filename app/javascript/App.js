@@ -18,6 +18,7 @@ import PrivacyPolicy from "./src/pages/PrivacyPolicy";
 import ShippingPolicy from "./src/pages/ShippingPolicy";
 import TermsAndConditions from "./src/pages/TermsAndConditions";
 import SingleProduct from "./src/pages/SingleProduct";
+import Cart from '.src/pages/Cart'
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="product" element={<OurStore />} />
           <Route path="product/:id" element={<SingleProduct />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="blogs" element={<Blog />} />
           <Route path="blog/:id" element={<SingleBlog />} />
           <Route path="compare-product" element={<CompareProduct />} />
