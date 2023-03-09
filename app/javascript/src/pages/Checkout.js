@@ -3,6 +3,7 @@ import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import watchImg from "../../Public/images/watch.jpg";
 
 const Checkout = () => {
   return (
@@ -21,24 +22,27 @@ const Checkout = () => {
                 >
                   <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <Link to="/cart" className="text-dark">Cart</Link>
+                      <Link to="/cart" className="text-dark total-price">
+                        Cart
+                      </Link>
                     </li>
                     &nbsp; /
-                    <li className="breadcrumb-item active" aria-current="page">
+                    <li className="breadcrumb-item active total-price" aria-current="page">
                       Information
                     </li>
                     &nbsp;/
-                    <li className="breadcrumb-item active"> Shipping</li>
+                    <li className="breadcrumb-item active total-price"> Shipping</li>
                     &nbsp; /
-                    <li className="breadcrumb-item active" aria-current="page">
+                    <li className="breadcrumb-item active total-price" aria-current="page">
                       Payment
                     </li>
                   </ol>
                 </nav>
-                <h4 className="title">Contact information</h4>
-                <p className="user-details">
+                <h4 className="title total">Contact information</h4>
+                <p className="user-details total">
                   Taimour Afzal (taimour.rkt@gmail.com)
                 </p>
+                <h4 className="mb-3">Shipping Address</h4>
                 <form
                   action=""
                   className="d-flex gap-15 flex-wrap justify-content-between"
@@ -113,7 +117,46 @@ const Checkout = () => {
                 </form>
               </div>
             </div>
-            <div className="col-5"></div>
+            <div className="col-5">
+              <div className="border-bottom py-4">
+                <div className="d-flex gap-10 mb-2 align-items-center">
+                  <div className="w-75 d-flex gap-10">
+                    <div className="w-25 position-relative">
+                      <span
+                        style={{ top: "-10px", right: "2px" }}
+                        className="badge bg-secondary text-white rounded-circle p-2 position-absolute "
+                      >
+                        1
+                      </span>
+                      <img src={watchImg} alt="product" className="img-fluid" />
+                    </div>
+                    <div>
+                      <h5 className="total-price">adfda</h5>
+                      <p className="total-price">s / #sfasfd</p>
+                    </div>
+                  </div>
+                  <div className="flex-grow-1">
+                    <h5 className="total">PKR 100</h5>
+                  </div>
+                </div>
+              </div>
+              <div className="border-bottom py-4">
+                <div className="d-flex justify-content-between alilgn-items-center">
+                  <p className="total">Shipping</p>
+                  <p className="total-price">PKR 10000</p>
+                </div>
+                <div className="d-flex justify-content-between alilgn-items-center">
+                  <p className="mb-0 total">SubTotal</p>
+                  <p className="mb-0 tota-price">PKR 10000</p>
+                </div>
+              </div>
+              <div>
+                <div className="d-flex justify-content-between alilgn-items-center border-bottom py-4">
+                  <h4 className="total">Total</h4>
+                  <h5 className="total-price">PKR 10000</h5>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
