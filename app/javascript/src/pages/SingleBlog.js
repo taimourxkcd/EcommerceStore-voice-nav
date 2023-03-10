@@ -3,6 +3,7 @@ import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import { Link } from "react-router-dom";
 import {HiOutlineArrowLeft} from "react-icons/hi"
+import Container from "../components/Container";
 
 import blogImg from "../../Public/images/blog-1.jpg"
 
@@ -11,8 +12,8 @@ const SingleBlog = () => {
     <>
       <Meta title={"Single Blog"} />
       <BreadCrumb title="Single Blog" />
-      <div className="blog-wrapper home-wrapper-2 py-5">
-        <div className="container-xxl">
+      <Container class1="blog-wrapper home-wrapper-2 py-5">
+        
           <div className="row">
             <div className="col-12">
               <div className="single-blog-card">
@@ -37,8 +38,8 @@ const SingleBlog = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        
+      </Container>
     </>
   );
 };
