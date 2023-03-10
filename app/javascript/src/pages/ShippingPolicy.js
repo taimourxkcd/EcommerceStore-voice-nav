@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 
@@ -7,17 +7,15 @@ const ShippingPolicy = () => {
     <>
       <Meta title={"Shipping Policy"} />
       <BreadCrumb title="Shipping Policy" />
-      <div className="policy-wrapper py-5 home-wrapper-2">
-        <div className="container-xxl">
-          <div className="row">
-            <div className="col-12">
-              <div className="policy"></div>
-            </div>
+      <Container class1="policy-wrapper py-5 home-wrapper-2">
+        <div className="row">
+          <div className="col-12">
+            <div className="policy"></div>
           </div>
         </div>
-      </div>
+      </Container>
     </>
   );
-}
+};
 
-export default ShippingPolicy
+export default ShippingPolicy;
