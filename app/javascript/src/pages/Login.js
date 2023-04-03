@@ -1,10 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 
 const Login = () => {
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+    registrationErrors: "",
+  });
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // new state variable
+  const [loginFailed, setLoginFailed] = useState(false);
+
+  const handleSubmit = (event) => {
+    const { email, password } = userData;
+
+    axios
+      .post(
+        "http://http://localhost:3000/login",
+        {
+          user: {
+            email: email,
+            password: password,
+            password_confirmation: password_confirmation,
+          },
+        },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        if (response.data.status === "created") {
+          console.log("Registration data", response.data);
+        }
+      })
+      .catch((error) => {
+        console.log("registration error", error);
+      });
+
+    event.preventDefault();
+  };
+
+  const handleChange = (event) => {
+    setUserData({
+      ...userData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <>
       <Meta title={"Login"} />
@@ -15,13 +58,29 @@ const Login = () => {
           <div className="col-12">
             <div className="auth-card">
               <h3 className="text-center mb-3">Login</h3>
-              <form action="" className="d-flex flex-column gap-15">
+
+              {isLoggedIn ? ( // show the "logged in successfully" flash message
+                <div className="alert alert-success" role="alert">
+                  Logged in successfully.
+                </div>
+              ) : (
+                ""
+              )}
+
+              <form
+                action=""
+                className="d-flex flex-column gap-15"
+                onSubmit={handleSubmit}
+              >
                 <div>
                   <input
                     type="email"
                     name="email"
                     placeholder="Email"
                     className="form-control"
+                    required
+                    value={userData.email}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="mt-3">
@@ -30,6 +89,9 @@ const Login = () => {
                     name="password"
                     placeholder="Password"
                     className="form-control"
+                    required
+                    value={userData.password}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
