@@ -11,7 +11,11 @@
 #  phone                  :string(255)
 
 class User < ApplicationRecord
-    has_many :orders
-    has_one :supplier
-    has_one :customer
+  has_secure_password
+  validates_presence_of :email, :password
+  validates_uniqueness_of :email
+
+  has_many :orders
+  has_one :supplier
+  has_one :customer
 end

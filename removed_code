@@ -1,1 +1,3 @@
 // = link_directory ../stylesheets .css
+
+"start": "concurrently \"rails server -p 3000\" \"esbuild --serve --port=3001 --servedir=app/assets/builds esbuild.config.js\""

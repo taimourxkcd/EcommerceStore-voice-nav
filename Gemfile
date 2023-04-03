@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
+gem "jwt"
+gem "bcrypt", "~> 3.1.7"
+gem "rack-cors", require: "rack/cors"
 gem "react-rails"
 gem "react_on_rails"
 gem "table_print"
@@ -19,6 +22,7 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
+gem "bootstrap", "~> 5.2"
 gem "sassc-rails"
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -32,5 +36,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-gem "rack-cors", "~> 1.1"
-gem "bootstrap", "~> 5.2"

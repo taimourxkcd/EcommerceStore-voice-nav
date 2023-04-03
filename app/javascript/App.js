@@ -21,7 +21,12 @@ import SingleProduct from "./src/pages/SingleProduct";
 import Cart from './src/pages/Cart'
 import Checkout from "./src/pages/Checkout";
 
+import axios from "axios"
+
 const App = () => {
+
+
+
   return (
     <BrowserRouter>
       <Routes>

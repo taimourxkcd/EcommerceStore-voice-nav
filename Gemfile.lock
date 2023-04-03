@@ -74,6 +74,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -118,6 +119,7 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
+    jwt (2.7.0)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -259,6 +261,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap
   bootstrap (~> 5.2)
   capybara
@@ -266,10 +269,11 @@ DEPENDENCIES
   faraday
   jbuilder
   jsbundling-rails
+  jwt
   pg
   pry
   puma (~> 5.0)
-  rack-cors (~> 1.1)
+  rack-cors
   rails (~> 7.0.4)
   react-rails
   react-rails-img
