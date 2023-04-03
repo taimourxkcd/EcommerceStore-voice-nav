@@ -7,7 +7,7 @@ module Api
       end
 
       def create
-        User.new(user_params)
+        user = User.new(user_params)
         if user.save
           render json: { status: "success", data: user }, status: :ok
         else
@@ -15,10 +15,19 @@ module Api
         end
       end
 
+      def show
+        user = User.find_by(id: params[:id])
+        if user
+          render json: { status: "success", data: user }, status: :ok
+        else
+          render json: { error: "User not found" }, status: :not_found
+        end
+      end
+
       private
 
       def user_params
-        params.require(:user).permit(:name, :email, :phone, :password)
+        params.permit(:name, :email, :phone, :password)
       end
     end
   end

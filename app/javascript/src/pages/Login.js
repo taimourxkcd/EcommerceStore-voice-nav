@@ -19,7 +19,7 @@ const Login = () => {
 
     axios
       .post(
-        "http://http://localhost:3000/login",
+        "http://http://localhost:3000/api/v1/users",
         {
           user: {
             email: email,
