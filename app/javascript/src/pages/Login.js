@@ -1,51 +1,53 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import axios from "axios";
 
 const Login = () => {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
-    registrationErrors: "",
+    errors: "",
   });
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // new state variable
-  const [loginFailed, setLoginFailed] = useState(false);
-
-  const handleSubmit = (event) => {
-    const { email, password } = userData;
-
-    axios
-      .post(
-        "http://http://localhost:3000/api/v1/users",
-        {
-          user: {
-            email: email,
-            password: password,
-            password_confirmation: password_confirmation,
-          },
-        },
-        { withCredentials: true }
-      )
-      .then((response) => {
-        if (response.data.status === "created") {
-          console.log("Registration data", response.data);
-        }
-      })
-      .catch((error) => {
-        console.log("registration error", error);
-      });
-
-    event.preventDefault();
-  };
+  const { email, password, errors } = userData;
 
   const handleChange = (event) => {
+    const { name, value } = event.target;
     setUserData({
       ...userData,
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const user = {
+      email: email,
+      password: password,
+    };
+
+    axios
+      .post("http://localhost:3000/login", { user }, { withCredentials: true })
+      .then((response) => {
+        if (response.data.logged_in) {
+          setUserData({
+            email: response.data.user.email,
+            password: "",
+            errors: "",
+          });
+          window.location.href = "/";
+        } else {
+          setUserData({
+            ...userData,
+            errors: response.data.errors,
+          });
+        }
+      })
+      .catch((error) => console.log("api errors:", error));
   };
 
   return (
@@ -59,14 +61,6 @@ const Login = () => {
             <div className="auth-card">
               <h3 className="text-center mb-3">Login</h3>
 
-              {isLoggedIn ? ( // show the "logged in successfully" flash message
-                <div className="alert alert-success" role="alert">
-                  Logged in successfully.
-                </div>
-              ) : (
-                ""
-              )}
-
               <form
                 action=""
                 className="d-flex flex-column gap-15"
@@ -79,7 +73,7 @@ const Login = () => {
                     placeholder="Email"
                     className="form-control"
                     required
-                    value={userData.email}
+                    value={email}
                     onChange={handleChange}
                   />
                 </div>
@@ -90,13 +84,13 @@ const Login = () => {
                     placeholder="Password"
                     className="form-control"
                     required
-                    value={userData.password}
+                    value={password}
                     onChange={handleChange}
                   />
                 </div>
                 <div>
                   <Link to="/forgot-password">Forgot Password?</Link>
-
+                  {errors && <p className="text-danger">{errors}</p>}
                   <div className="mt-3 d-flex justify-content-center gap-15 align-items-center">
                     <button className="button border-0" type="submit">
                       Login

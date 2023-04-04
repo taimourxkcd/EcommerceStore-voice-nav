@@ -9,15 +9,17 @@ Rails.application.routes.draw do
 
   # devise_for :users
 
+  post "/login", to: "sessions#create"
+  post "/logout", to: "sessions#destroy"
+  get "/logged_in", to: "sessions#is_logged_in?"
   resources :sessions, only: [:create]
   resources :users
 
-  delete :logout, to: "sessions#logout"
-  get :logged_in, to: "sessions#logged_in"
-
   root "home#index"
   get "*path", to: "home#index", constraints: ->(request) { request.format.html? }, via: :all
-  # get "/api/users", to: "api/users#index"
 
-  resources :orders
+  get "/api/users", to: "api/users#index"
+  post "/verify/login", to: "sessions#create"
+  get "/authorized", to: "sessions#show"
+  get "/dashboard", to: "users#show"
 end

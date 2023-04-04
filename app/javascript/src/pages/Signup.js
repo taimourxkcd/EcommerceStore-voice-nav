@@ -1,32 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 
 const Signup = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    errors: "",
+  });
+
+  const { name, email, phone, password, errors } = userData;
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUserData({
+      ...userData,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    fetchData();
-  };
-
-  const fetchData = async () => {
-    const response = await fetch("http://localhost:3000/api/v1/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, phone, password }),
-    })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
+    try {
+      const response = await axios.post("/api/v1/users", {
+        name: name,
+        email: email,
+        phone: phone,
+        password: password,
       });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.response.data);
+      setUserData({
+        ...userData,
+        errors: error.response.data.errors,
+      });
+    }
   };
 
   return (
@@ -51,7 +65,7 @@ const Signup = () => {
                     placeholder="Name"
                     className="form-control"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -62,7 +76,7 @@ const Signup = () => {
                     placeholder="Email"
                     className="form-control"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -72,7 +86,7 @@ const Signup = () => {
                     placeholder="Phone Number"
                     className="form-control"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -83,7 +97,7 @@ const Signup = () => {
                     placeholder="Password"
                     className="form-control"
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -94,6 +108,7 @@ const Signup = () => {
                   </div>
                 </div>
               </form>
+              {errors && <div className="error">{errors}</div>}
             </div>
           </div>
         </div>

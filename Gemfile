@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
+gem "active_model_serializers", "~> 0.10.0"
 gem "jwt"
 gem "bcrypt", "~> 3.1.7"
 gem "rack-cors", require: "rack/cors"

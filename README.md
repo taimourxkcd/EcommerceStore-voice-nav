@@ -109,45 +109,12 @@ You can deploy this project using:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 🔭 Future Features <a name="future-features"></a>
+### Resoucres
+https://medium.com/codex/deploying-a-rails-api-react-app-with-sessions-and-csrf-tokens-d33d2924639
 
-- **Github Deployment**
+deploy to render
+https://dev.to/nickmendez/heroku-alternative-how-to-deploy-a-reactjs-rails-api-app-to-render-2k17
+https://gorails.com/episodes/how-to-deploy-rails-to-render
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## ⭐️ Show your support <a name="support"></a>
-
-If you like this project, please support by contributing to the codebase
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-I would like to thank the entire microverse team for the inspiration h=behinf this project.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## ❓ FAQ <a name="faq"></a>
-
-- **None**
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./LICENSE) licensed.
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+amazon s3 bucket for images
+https://medium.com/nerd-for-tech/handling-images-part-1-using-active-storage-in-rails-6-with-amazon-s3-buckets-92b739fa790
