@@ -1,14 +1,3 @@
-<div align="center">
-
-  <img src="public/images/1.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Ecommerce Store with Voice Navigation </b></h3>
-
-
-
-</div>
-
 
 # 📖 Ecommerce Store with Voice Navigation <a name="about-project"></a>
 
@@ -22,6 +11,13 @@
   <ul>
     <li>React</li>
     <li>Redux</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Backend</summary>
+  <ul>
+    <li>Ruby on Rails</li>
   </ul>
 </details>
 
