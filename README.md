@@ -26,19 +26,6 @@
 </details>
 
 
-### Key Features <a name="key-features"></a>
-
-- **Navigation using voice commands**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
@@ -110,11 +97,14 @@ You can deploy this project using:
 
 
 ### Resoucres
-https://medium.com/codex/deploying-a-rails-api-react-app-with-sessions-and-csrf-tokens-d33d2924639
+- https://medium.com/codex/deploying-a-rails-api-react-app-with-sessions-and-csrf-tokens-d33d2924639
 
 deploy to render
-https://dev.to/nickmendez/heroku-alternative-how-to-deploy-a-reactjs-rails-api-app-to-render-2k17
-https://gorails.com/episodes/how-to-deploy-rails-to-render
+- https://dev.to/nickmendez/heroku-alternative-how-to-deploy-a-reactjs-rails-api-app-to-render-2k17
+- https://gorails.com/episodes/how-to-deploy-rails-to-render
 
 amazon s3 bucket for images
-https://medium.com/nerd-for-tech/handling-images-part-1-using-active-storage-in-rails-6-with-amazon-s3-buckets-92b739fa790
+- https://medium.com/nerd-for-tech/handling-images-part-1-using-active-storage-in-rails-6-with-amazon-s3-buckets-92b739fa790
+
+login signup auth
+- https://medium.com/swlh/react-reactions-cfdde7f08dff
