@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./src/pages/Home";
 import About from "./src/pages/About";
@@ -18,14 +18,41 @@ import PrivacyPolicy from "./src/pages/PrivacyPolicy";
 import ShippingPolicy from "./src/pages/ShippingPolicy";
 import TermsAndConditions from "./src/pages/TermsAndConditions";
 import SingleProduct from "./src/pages/SingleProduct";
-import Cart from './src/pages/Cart'
+import Cart from "./src/pages/Cart";
 import Checkout from "./src/pages/Checkout";
 
-import axios from "axios"
+import axios from "axios";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
 
+  useEffect(() => {
+    loginStatus();
+  }, []);
 
+  const loginStatus = () => {
+    axios
+      .get("http://localhost:3000/logged_in", { withCredentials: true })
+      .then((response) => {
+        if (response.data.logged_in) {
+          handleLogin(response);
+        } else {
+          handleLogout();
+        }
+      })
+      .catch((error) => console.log("api errors:", error));
+  };
+
+  const handleLogin = (data) => {
+    setIsLoggedIn(true);
+    setUser(data.user);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUser({});
+  };
 
   return (
     <BrowserRouter>
@@ -41,7 +68,7 @@ const App = () => {
           <Route path="blog/:id" element={<SingleBlog />} />
           <Route path="compare-product" element={<CompareProduct />} />
           <Route path="wishlist" element={<Wishlist />} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={<Login handleLogin={handleLogin} />} />
           <Route path="signup" element={<Signup />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
