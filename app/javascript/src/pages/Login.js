@@ -23,32 +23,37 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const user = {
-      email: email,
-      password: password,
-    };
-
-    axios
-      .post("http://localhost:3000/login", { user }, { withCredentials: true })
-      .then((response) => {
-        if (response.data.logged_in) {
-          setUserData({
-            email: response.data.user.email,
-            password: "",
-            errors: "",
-          });
-          window.location.href = "/";
-        } else {
-          setUserData({
-            ...userData,
-            errors: response.data.errors,
-          });
-        }
-      })
-      .catch((error) => console.log("api errors:", error));
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const user = {
+    email: email,
+    password: password,
   };
+
+  axios
+    .post(
+      "http://localhost:3000/login",
+      { user: user },
+      { withCredentials: true }
+    )
+    .then((response) => {
+      if (response.data.logged_in) {
+        setUserData({
+          email: response.data.user.email,
+          password: "",
+          errors: "",
+        });
+        window.location.href = "/";
+      } else {
+        setUserData({
+          ...userData,
+          errors: response.data.errors,
+        });
+      }
+    })
+    .catch((error) => console.log("api errors:", error));
+};
+
 
   return (
     <>
@@ -62,9 +67,10 @@ const Login = () => {
               <h3 className="text-center mb-3">Login</h3>
 
               <form
-                action=""
+                action="/login"
                 className="d-flex flex-column gap-15"
                 onSubmit={handleSubmit}
+                method="post"
               >
                 <div>
                   <input

@@ -25,6 +25,8 @@ module Api
         end
       end
 
+      # new methods
+
       def getAllUsers
         users = User.all
         render json: users, status: :ok
@@ -35,10 +37,26 @@ module Api
         render json: @user
       end
 
+      def deleteaUser
+        @user = User.find(params[:id])
+        @user.destroy
+        head :no_content
+      end
+
+      def updateaUser
+        @user = User.find(params[:id])
+
+        if @user.update(user_params)
+          render json: @user
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def user_params
-        params.require(:user).permit(:name, :email, :phone, :password)
+        params.permit(:name, :email, :customer_id, :supplier_id, :phone, :password)
       end
     end
   end
