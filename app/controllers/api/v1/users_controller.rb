@@ -30,6 +30,11 @@ module Api
         render json: users, status: :ok
       end
 
+      def getaUser
+        @user = User.find(params[:id])
+        render json: @user
+      end
+
       private
 
       def user_params

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create, :destroy]
       get "/me", to: "users#show"
       get "/Users/all-users", to: "users#getAllUsers"
+      get "/Users/:id", to: "users#getaUser"
     end
   end
 
