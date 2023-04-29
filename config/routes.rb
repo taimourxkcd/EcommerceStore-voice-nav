@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :show]
       resources :sessions, only: [:create, :destroy]
       get "/me", to: "users#show"
+      get "/Users/all-users", to: "users#getAllUsers"
     end
   end
 
@@ -22,4 +23,6 @@ Rails.application.routes.draw do
   post "/verify/login", to: "sessions#create"
   get "/authorized", to: "sessions#show"
   get "/dashboard", to: "users#show"
+
+  # new routes
 end
