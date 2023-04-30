@@ -38,11 +38,11 @@ const handleSubmit = (event) => {
     )
     .then((response) => {
       if (response.data.logged_in) {
-              setUserData({
-                email: response.data.user.email,
-                password: "",
-                errors: "",
-              });
+        setUserData({
+          email: response.data.user.email,
+          password: "",
+          errors: "",
+        });
         window.location.href = "/";
       } else {
         setUserData({
@@ -53,6 +53,8 @@ const handleSubmit = (event) => {
     })
     .catch((error) => console.log("api errors:", error));
 };
+
+
 
   return (
     <>

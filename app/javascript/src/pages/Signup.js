@@ -27,12 +27,18 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("/api/v1/users", {
-        name: name,
-        email: email,
-        phone: phone,
-        password: password,
-      });
+      const response = await axios.post(
+        "/api/v1/users",
+        {
+          user: {
+            name: name,
+            email: email,
+            phone: phone,
+            password: password,
+          },
+        },
+        { withCredentials: true}
+      );
       console.log(response.data);
     } catch (error) {
       console.log(error.response.data);
