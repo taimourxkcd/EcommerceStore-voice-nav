@@ -10,12 +10,16 @@
 #  last_name              :string(255)
 #  phone                  :string(255)
 
+require "#{Rails.root}/app/serializers/user_serializer"
+
 class User < ApplicationRecord
   has_secure_password
   validates_presence_of :email, :password
   validates_uniqueness_of :email
 
+  serialize :cart, Array
   has_many :orders
   has_one :supplier
   has_one :customer
+  belongs_to :address, optional: true
 end

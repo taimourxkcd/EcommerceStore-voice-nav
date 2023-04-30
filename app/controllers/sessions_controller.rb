@@ -4,10 +4,11 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
 
     if @user && @user.authenticate(session_params[:password])
-      login!
+      token = encode_token({ user_id: @user.id })
       render json: {
                logged_in: true,
                user: @user,
+               token: token, # send the JWT token back to the client
              }
     else
       render json: {
