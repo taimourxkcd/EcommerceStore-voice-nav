@@ -5,6 +5,7 @@ import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 
 const Login = () => {
@@ -46,12 +47,14 @@ const Login = () => {
             password: "",
             errors: "",
           });
-          localStorage.setItem("token", response.data.token); // store token in localStorage
+          sessionStorage.setItem("token", response.data.token); // store token in localStorage
           console.log(
-            "Token stored in localStorage:",
-            localStorage.getItem("token")
+            "Token stored in sessionStorage:",
+            sessionStorage.getItem("token")
           );
-          // navigate.push("/"); // Use history.push instead of window.location.href
+
+    
+          window.location.href = "/";
         } else {
           setUserData({
             ...userData,
