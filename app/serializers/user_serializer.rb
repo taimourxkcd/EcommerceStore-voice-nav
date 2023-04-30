@@ -11,6 +11,7 @@ class UserSerializer
       customer_id: @user.customer_id,
       supplier_id: @user.supplier_id,
       phone: @user.phone,
+      role: @user.role,
     }
   end
 end

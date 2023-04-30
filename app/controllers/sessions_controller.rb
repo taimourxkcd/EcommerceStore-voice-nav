@@ -1,42 +1,47 @@
-#app/controllers/sessions_controller.rb
 class SessionsController < ApplicationController
+  include CurrentUserConcern
+
   def create
-    @user = User.find_by(email: session_params[:email])
-
-    if @user && @user.authenticate(session_params[:password])
-      login!
+    user = User.find_by(email: params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      token = JWT.encode({ user_id: user.id }, Rails.application.secrets.secret_key_base)
       render json: {
-               logged_in: true,
-               user: @user,
-             }
+        logged_in: true,
+        user: UserSerializer.new(user).serialize, # Use serialization
+        token: token,
+      }
     else
-      render json: {
-               status: 401,
-               errors: ["no such user, please try again"],
-             }
+      render json: { errors: "Invalid email or password" }
     end
   end
 
-  def is_logged_in?
-    if logged_in? && current_user
+  def logged_in
+    if @current_user
       render json: {
-               logged_in: true,
-               user: current_user,
-             }
+        logged_in: true,
+        user: UserSerializer.new(@current_user).serialize, # Use serialization
+      }
     else
       render json: {
-               logged_in: false,
-               message: "no such user",
-             }
+        logged_in: false,
+        message: "no such user",
+      }
     end
   end
 
+  def logout
+    reset_session
+    render json: { status: 200, logged_out: true }
+  end
+
+  # todo: delete this method
   def destroy
     logout!
     render json: {
-             status: 200,
-             logged_out: true,
-           }
+      status: 200,
+      logged_out: true,
+    }
   end
 
   private

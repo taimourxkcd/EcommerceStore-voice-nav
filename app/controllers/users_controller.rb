@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      session[:user_id] = user.id
       token = JWT.encode({ user_id: user.id }, Rails.application.secrets.secret_key_base)
       render json: { user: UserSerializer.new(user).serialize, jwt: token, status: "success", data: user }, status: :ok
     else
@@ -14,6 +15,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email, :customer_id, :supplier_id, :phone, :password)
+    params.permit(:name, :email, :role, :customer_id, :supplier_id, :phone, :password)
   end
 end

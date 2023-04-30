@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   # devise_for :users
 
   post "/login", to: "sessions#create"
-  post "/logout", to: "sessions#destroy"
-  get "/logged_in", to: "sessions#is_logged_in?"
+  post "/logout", to: "sessions#logout"
+  get "/logged_in", to: "sessions#logged_in"
   resources :sessions, only: [:create]
   resources :users
 

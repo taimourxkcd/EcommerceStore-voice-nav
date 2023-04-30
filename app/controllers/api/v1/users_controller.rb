@@ -1,6 +1,8 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      before_action :authenticate_user!, only: [:show]
+
       def index
         users = User.all
         render json: users, status: :ok
@@ -9,8 +11,8 @@ module Api
       def create
         user = User.new(user_params)
         if user.save
-          token = issue_token(user)
-          render json: { user: UserSerializer.new(user), jwt: token, status: "success", data: user }, status: :ok
+          token = Auth.issue({ user_id: user.id })
+          render json: { user: UserSerializer.new(user).serialize, jwt: token, status: "success", data: user }, status: :ok
         else
           render json: { error: user.errors.full_messages.join(",") }, status: :unprocessable_entity
         end
@@ -57,6 +59,16 @@ module Api
 
       def user_params
         params.permit(:name, :email, :customer_id, :supplier_id, :phone, :password)
+      end
+
+      def authenticate_user!
+        token = request.headers["Authorization"].split(" ").last
+        decoded_token = Auth.decode(token)
+        Rails.logger.info("decoded token: #{decoded_token}") # add this log to see decoded token
+        @current_user ||= User.find(decoded_token["user_id"])
+        Rails.logger.info("authenticated user: #{@current_user}") # add this log to see authenticated user
+      rescue JWT::VerificationError, JWT::DecodeError
+        render json: { error: "Unauthorized" }, status: :unauthorized
       end
     end
   end
