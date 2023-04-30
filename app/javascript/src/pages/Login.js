@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import axios from "axios";
 
+
 const Login = () => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -23,38 +25,42 @@ const Login = () => {
     });
   };
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const user = {
-    email: email,
-    password: password,
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const user = {
+      email: email,
+      password: password,
+    };
+
+    axios
+      .post(
+        "http://localhost:3000/login",
+        { user: user },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        if (response.data.logged_in) {
+          setUserData({
+            email: response.data.user.email,
+            password: "",
+            errors: "",
+          });
+          localStorage.setItem("token", response.data.token); // store token in localStorage
+          console.log(
+            "Token stored in localStorage:",
+            localStorage.getItem("token")
+          );
+          // navigate.push("/"); // Use history.push instead of window.location.href
+        } else {
+          setUserData({
+            ...userData,
+            errors: response.data.errors,
+          });
+        }
+      })
+      .catch((error) => console.log("api errors:", error));
   };
-
-  axios
-    .post(
-      "http://localhost:3000/login",
-      { user: user },
-      { withCredentials: true }
-    )
-    .then((response) => {
-      if (response.data.logged_in) {
-        setUserData({
-          email: response.data.user.email,
-          password: "",
-          errors: "",
-        });
-        window.location.href = "/";
-      } else {
-        setUserData({
-          ...userData,
-          errors: response.data.errors,
-        });
-      }
-    })
-    .catch((error) => console.log("api errors:", error));
-};
-
-
 
   return (
     <>
