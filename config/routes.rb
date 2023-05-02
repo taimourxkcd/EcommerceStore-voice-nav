@@ -27,10 +27,6 @@ Rails.application.routes.draw do
   root "home#index"
   get "*path", to: "home#index", constraints: ->(request) { request.format.html? }, via: :all
 
-  get "/api/users", to: "api/users#index"
-  post "/verify/login", to: "sessions#create"
-  get "/authorized", to: "sessions#show"
-  get "/dashboard", to: "users#show"
-
   # new routes
+  resources :products, param: :slug
 end
