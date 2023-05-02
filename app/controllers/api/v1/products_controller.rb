@@ -11,6 +11,18 @@ module Api
         end
       end
 
+      def show
+        @product = Product.find(params[:id])
+        render json: @product
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: "Product not found" }, status: :not_found
+      end
+
+      def getAllProducts
+        products = Product.all
+        render json: products
+      end
+
       private
 
       def product_params

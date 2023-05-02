@@ -4,14 +4,18 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :show]
       resources :sessions, only: [:create, :destroy]
       resources :products
-      get "/me", to: "users#show"
 
       # new routes
+
+      # user
       get "/Users/all-users", to: "users#getAllUsers"
       get "/Users/:id", to: "users#getaUser"
       get "/Users/:id", to: "users#getaUser"
       delete "/Users/:id", to: "users#deleteaUser"
       put "/Users/:id", to: "users#updateaUser"
+
+      # product
+      get "/Products/all-products", to: "products#getAllProducts"
     end
   end
 
