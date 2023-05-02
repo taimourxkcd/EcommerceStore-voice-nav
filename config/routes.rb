@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
       # product
       get "/Products/all-products", to: "products#getAllProducts"
+      put "/Products/:id", to: "products#updateaProduct"
+      # creating the rest of the restful routes as provided by rails. this was just for practice
     end
   end
 

@@ -16,16 +16,21 @@
 class Product < ApplicationRecord
   enum color: [:red, :black, :green]
   before_save :generate_slug
-  validates :description, presence: true
   belongs_to :brand, optional: true
   belongs_to :customer
   belongs_to :category
+
+  validates :description, presence: true
+
+  # TODO: make sure that slug is unique, below line now working now
+  # validates :slug, uniqueness: true, presence: true
 
   def to_param
     slug
   end
 
   def generate_slug
-    self.slug ||= title.parameterize
+    self.slug ||= [brand.name, category.title, self.title].map(&:parameterize).join("-")
+    puts "Generated slug: #{self.slug}"
   end
 end
