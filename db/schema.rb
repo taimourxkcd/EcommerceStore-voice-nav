@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_02_001527) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_02_003643) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -110,6 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_001527) do
     t.integer "color", limit: 2
     t.integer "quantity"
     t.integer "sold"
+    t.integer "brand_id"
     t.index ["slug"], name: "index_products_on_slug", unique: true
     t.check_constraint "color = ANY (ARRAY[0, 1, 2])", name: "check_color"
   end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :create, :show]
       resources :sessions, only: [:create, :destroy]
+      resources :products
       get "/me", to: "users#show"
 
       # new routes

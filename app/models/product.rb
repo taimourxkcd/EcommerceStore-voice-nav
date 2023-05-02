@@ -17,7 +17,9 @@ class Product < ApplicationRecord
   enum color: [:red, :black, :green]
   before_save :generate_slug
   validates :description, presence: true
-  belongs_to :brand
+  belongs_to :brand, optional: true
+  belongs_to :customer
+  belongs_to :category
 
   def to_param
     slug
@@ -26,7 +28,4 @@ class Product < ApplicationRecord
   def generate_slug
     self.slug ||= title.parameterize
   end
-
-  belongs_to :customer
-  belongs_to :category
 end
