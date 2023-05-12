@@ -6,9 +6,103 @@ import wishlistImg from "../../Public/images/wishlist.svg";
 import userImg from "../../Public/images/user.svg";
 import cartImg from "../../Public/images/cart.svg";
 import menuImg from "../../Public/images/menu.svg";
+import { useNavigate } from "react-router-dom";
+
+import "regenerator-runtime/runtime";
+
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
 
 const Header = () => {
+  function start() {
+    SpeechRecognition.startListening({ continuous: true });
+  }
+
+  const navigate = useNavigate();
+
+  const commands = [
+    {
+      command: "go to home",
+      callback: ({ goHome }) => navigate("/"),
+    },
+    {
+      command: "go to about",
+      callback: ({ goFav }) => navigate("/about"),
+    },
+    {
+      command: "go to contact",
+      callback: ({ goNew }) => navigate("/contact"),
+    },
+    {
+      command: "go to our store",
+      callback: ({ goHome }) => navigate("/product"),
+    },
+    {
+      command: "go to cart",
+      callback: ({ goFav }) => navigate("/cart"),
+    },
+    {
+      command: "go to blogs",
+      callback: ({ goNew }) => navigate("/blogs"),
+    },
+    {
+      command: "compare products",
+      callback: ({ goHome }) => navigate("/compare-product"),
+    },
+    {
+      command: "go to wish list",
+      callback: ({ goFav }) => navigate("/wishlist"),
+    },
+    {
+      command: "scroll down",
+      callback: () => {
+        window.scrollTo({
+          top: window.pageYOffset + 500,
+          behavior: "smooth", // This makes the scrolling smooth instead of instant
+        });
+      },
+    },
+    {
+      command: "scroll up",
+      callback: () => {
+        window.scrollTo({
+          top: window.pageYOffset - 500,
+          behavior: "smooth", // This makes the scrolling smooth instead of instant
+        });
+      },
+    },
+    {
+      command: "scroll to the top",
+      callback: () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      },
+    },
+    {
+      command: "scroll to the bottom",
+      callback: () => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      },
+    },
+    {
+      command: "scroll to the bottom",
+      callback: () => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      },
+    },
+  ];
+
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
   return (
     <>
       <header className="header-top-strip py-3">
@@ -26,6 +120,12 @@ const Header = () => {
                   +92 3328578135
                 </a>
               </p>
+            </div>
+            <div>
+              <button onClick={start}>Start</button>
+            </div>
+            <div>
+              <input value={transcript} type="text"></input>
             </div>
           </div>
         </div>
