@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import compareImg from "../../Public/images/compare.svg";
@@ -16,9 +17,27 @@ import SpeechRecognition, {
 
 
 const Header = () => {
-  function start() {
-    SpeechRecognition.startListening({ continuous: true });
-  }
+
+  // Code for button press control starts here:
+
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.ctrlKey) {
+        SpeechRecognition.startListening({ continuous: true });
+      }if (event.key === "Escape") {
+        SpeechRecognition.stopListening();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Clean up the event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  //Code for button press control ends here
 
   const navigate = useNavigate();
 
@@ -117,13 +136,10 @@ const Header = () => {
               <p className="text-end text-white mb-0">
                 Hotline:
                 <a className="text-white" href="tel:+92 3328578135">
-                  +92 3328578135
+                  +0900-78601
                 </a>
               </p>
-            </div>
-            <div>
-              <button onClick={start}>Start</button>
-            </div>
+            </div>            
             <div>
               <input value={transcript} type="text"></input>
             </div>
@@ -136,7 +152,7 @@ const Header = () => {
           <div className="row align-items-center">
             <div className="col-2">
               <h2>
-                <Link className="text-white ">Online Store</Link>
+                <Link className="text-white ">VoiceMart</Link>
               </h2>
             </div>
             <div className="col-5">
