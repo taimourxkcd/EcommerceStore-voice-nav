@@ -1,9 +1,6 @@
 module Api
   module V1
     class ProductsController < ApplicationController
-      before_action :authenticate_user!
-      before_action :set_product, only: [:show, :edit, :update, :destroy]
-
       def create
         product = Product.new(product_params)
         if product.save
@@ -48,7 +45,7 @@ module Api
       private
 
       def product_params
-        params.require(:product).permit(:title, :description, :price, :customer_id, :category_id, :image_id, :color, :quantity, :sold).tap do |whitelisted|
+        params.require(:product).permit(:title, :description, :price, :image_path, :customer_id, :category_id, :image_id, :color, :quantity, :sold, :rating).tap do |whitelisted|
           whitelisted[:brand_id] = params[:product][:brand_id] || Brand.find_or_create_by(name: "Default Brand").id
         end
       end
