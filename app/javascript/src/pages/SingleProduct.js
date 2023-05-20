@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import ProductCard from "../components/ProductCard";
@@ -12,8 +12,26 @@ import { AiOutlineHeart } from "react-icons/ai";
 import tvImg from "../../Public/images/tv.jpg";
 import headphoneImg from "../../Public/images/headphone.jpg";
 import Container from "../components/Container";
+import axios from "axios";
 
 const SingleProduct = () => {
+  const [ product, setProduct ] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:3000/api/v1/products/20"
+        );
+        setProduct(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProduct();
+  }, []);
+
   const props = {
     width: 400,
     height: 600,
@@ -32,6 +50,8 @@ const SingleProduct = () => {
     textField.remove();
   };
 
+  
+
   return (
     <>
       <Meta title={"Single Product"} />
@@ -47,21 +67,29 @@ const SingleProduct = () => {
               <div>
                 <div className="other-product-images d-flex flex-wrap gap-15">
                   <div>
-                    <img src={tvImg} alt="watch" className="img-fluid" />
-                  </div>
-                  <div>
-                    <img src={headphoneImg} alt="watch" className="img-fluid" />
-                  </div>
-                  <div>
                     <img
-                      src="https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg"
+                      src={product.image_path}
                       alt="watch"
                       className="img-fluid"
                     />
                   </div>
                   <div>
                     <img
-                      src="https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg"
+                      src={product.image_path}
+                      alt="watch"
+                      className="img-fluid"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src={product.image_path}
+                      alt="watch"
+                      className="img-fluid"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src={product.image_path}
                       alt="watch"
                       className="img-fluid"
                     />
@@ -73,9 +101,7 @@ const SingleProduct = () => {
           <div className="col-6">
             <div className="main-product-details">
               <div className="border-bottom">
-                <h3 className="title">
-                  Kids headphones Bulk 10 Pack Multi Colored for student
-                </h3>
+                <h3 className="title">{product.title}</h3>
               </div>
               <div className="border-bottom py-3">
                 <p className="price">$ 100</p>
@@ -83,7 +109,7 @@ const SingleProduct = () => {
                   <ReactStars
                     count={5}
                     size={24}
-                    value={3}
+                    value={4}
                     edit={false}
                     activeColor="#ffc700"
                   ></ReactStars>

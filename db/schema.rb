@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_02_003643) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_20_121246) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_003643) do
     t.string "content_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "product_id"
+    t.string "image_path"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -111,6 +113,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_003643) do
     t.integer "quantity"
     t.integer "sold"
     t.integer "brand_id"
+    t.integer "rating"
+    t.string "image_path"
     t.index ["slug"], name: "index_products_on_slug", unique: true
     t.check_constraint "color = ANY (ARRAY[0, 1, 2])", name: "check_color"
   end
@@ -124,6 +128,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_003643) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_ratings_on_product_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "refresh_tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_refresh_tokens_on_token"
+    t.index ["user_id"], name: "index_refresh_tokens_on_user_id"
   end
 
   create_table "suppliers", force: :cascade do |t|
@@ -154,4 +167,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_02_003643) do
 
   add_foreign_key "ratings", "products"
   add_foreign_key "ratings", "users"
+  add_foreign_key "refresh_tokens", "users"
 end
