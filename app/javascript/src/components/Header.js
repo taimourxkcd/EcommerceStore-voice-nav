@@ -34,8 +34,7 @@ const Header = () => {
       setSearchResults(data);
       console.log(data);
 
-      // Redirect to SingleProduct2 page with the search results
-      navigate("/product2", { state: { searchResults: data } });
+      navigate("/searchproduct", { state: { searchResults: data } });
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -199,7 +198,7 @@ const Header = () => {
                   <BsSearch className="fs-6" />
                 </button>
                 {searchResults.map((product) => (
-                  <Link to={`/products2/${product.id}`} key={product.id}>
+                  <Link to={`/searchproduct/${product.id}`} key={product.id}>
                     <div>
                       <h3>{product.name}</h3>
                       {/* Display other relevant product information */}
