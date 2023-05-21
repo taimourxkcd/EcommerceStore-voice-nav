@@ -17,9 +17,9 @@ import SpeechRecognition, {
 
 const Header = () => {
   // send search query to the backend
-
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
   const handleSearch = async () => {
     try {
@@ -32,6 +32,10 @@ const Header = () => {
       });
       const data = await response.json();
       setSearchResults(data);
+      console.log(data);
+
+      // Redirect to SingleProduct2 page with the search results
+      navigate("/product2", { state: { searchResults: data } });
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -40,7 +44,6 @@ const Header = () => {
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
   };
-
   // Code for button press control starts here:
 
   useEffect(() => {
@@ -62,8 +65,6 @@ const Header = () => {
   }, []);
 
   //Code for button press control ends here
-
-  const navigate = useNavigate();
 
   const commands = [
     {
@@ -197,6 +198,14 @@ const Header = () => {
                 >
                   <BsSearch className="fs-6" />
                 </button>
+                {searchResults.map((product) => (
+                  <Link to={`/products2/${product.id}`} key={product.id}>
+                    <div>
+                      <h3>{product.name}</h3>
+                      {/* Display other relevant product information */}
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
             <div className="col-5">
