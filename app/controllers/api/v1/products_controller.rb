@@ -45,9 +45,7 @@ module Api
       private
 
       def product_params
-        params.require(:product).permit(:title, :description, :price, :image_path, :customer_id, :category_id, :image_id, :color, :quantity, :sold, :rating).tap do |whitelisted|
-          whitelisted[:brand_id] = params[:product][:brand_id] || Brand.find_or_create_by(name: "Default Brand").id
-        end
+        params.require(:product).permit(:title, :description, :price, :image_path, :customer_id, :category_id, :image_id, :color, :quantity, :sold, :rating)
       end
 
       def authenticate_user!
