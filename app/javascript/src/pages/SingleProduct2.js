@@ -10,8 +10,6 @@ import { Link } from "react-router-dom";
 import { TbGitCompare } from "react-icons/tb";
 import { AiOutlineHeart } from "react-icons/ai";
 
-import tvImg from "../../Public/images/tv.jpg";
-import headphoneImg from "../../Public/images/headphone.jpg";
 import Container from "../components/Container";
 
 const SingleProduct2 = () => {
@@ -19,13 +17,16 @@ const SingleProduct2 = () => {
   const location = useLocation();
   const searchResults = location.state.searchResults;
 
-  console.log("Search Results:", searchResults);
-
+  // console.log("Search Results:", searchResults.title);
+  console.log("Title:", searchResults[0].title);
+  
+  const imageSrc = searchResults[0].image_path;
+  console.log(imageSrc)
   const props = {
     width: 400,
     height: 600,
     zoomWidth: 600,
-    img: "https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg",
+    img: imageSrc ? imageSrc : "",
   };
   const [orderedProduct, setorderedProduct] = useState(true);
 
@@ -54,21 +55,29 @@ const SingleProduct2 = () => {
               <div>
                 <div className="other-product-images d-flex flex-wrap gap-15">
                   <div>
-                    <img src={tvImg} alt="watch" className="img-fluid" />
-                  </div>
-                  <div>
-                    <img src={headphoneImg} alt="watch" className="img-fluid" />
-                  </div>
-                  <div>
                     <img
-                      src="https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg"
+                      src={searchResults[0].image_path}
                       alt="watch"
                       className="img-fluid"
                     />
                   </div>
                   <div>
                     <img
-                      src="https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?cs=srgb&dl=pexels-pixabay-280250.jpg&fm=jpg"
+                      src={searchResults[0].image_path}
+                      alt="watch"
+                      className="img-fluid"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src={searchResults[0].image_path}
+                      alt="watch"
+                      className="img-fluid"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src={searchResults[0].image_path}
                       alt="watch"
                       className="img-fluid"
                     />
@@ -80,9 +89,7 @@ const SingleProduct2 = () => {
           <div className="col-6">
             <div className="main-product-details">
               <div className="border-bottom">
-                <h3 className="title">
-                  Kids headphones Bulk 10 Pack Multi Colored for student
-                </h3>
+                <h3 className="title">{searchResults[0].title}</h3>
               </div>
               <div className="border-bottom py-3">
                 <p className="price">$ 100</p>
