@@ -24,6 +24,7 @@ import PrivacyPolicy from "./src/pages/PrivacyPolicy";
 import ShippingPolicy from "./src/pages/ShippingPolicy";
 import TermsAndConditions from "./src/pages/TermsAndConditions";
 import SingleProduct from "./src/pages/SingleProduct";
+import SingleProduct2 from "./src/pages/SingleProduct2";
 import Cart from "./src/pages/Cart";
 import Checkout from "./src/pages/Checkout";
 
@@ -72,6 +73,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="product" element={<OurStore />} />
           <Route path="product/:id" element={<SingleProduct />} />
+          <Route path="product2" element={<SingleProduct2 />} />
           <Route path="cart" element={<Cart />} />
           <Route path="blogs" element={<Blog />} />
           <Route path="blog/:id" element={<SingleBlog />} />

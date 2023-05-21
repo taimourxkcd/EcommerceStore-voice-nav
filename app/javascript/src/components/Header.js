@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
@@ -15,16 +15,43 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-
 const Header = () => {
+  // send search query to the backend
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
+  const handleSearch = async () => {
+    try {
+      const response = await fetch("/products/search", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query: searchQuery }),
+      });
+      const data = await response.json();
+      setSearchResults(data);
+      console.log(data);
+
+      // Redirect to SingleProduct2 page with the search results
+      navigate("/product2", { state: { searchResults: data } });
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    }
+  };
+
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
   // Code for button press control starts here:
 
   useEffect(() => {
     function handleKeyDown(event) {
       if (event.ctrlKey) {
         SpeechRecognition.startListening({ continuous: true });
-      }if (event.key === "Escape") {
+      }
+      if (event.key === "Escape") {
         SpeechRecognition.stopListening();
       }
     }
@@ -38,8 +65,6 @@ const Header = () => {
   }, []);
 
   //Code for button press control ends here
-
-  const navigate = useNavigate();
 
   const commands = [
     {
@@ -139,7 +164,7 @@ const Header = () => {
                   +0900-78601
                 </a>
               </p>
-            </div>            
+            </div>
             <div>
               <input value={transcript} type="text"></input>
             </div>
@@ -161,12 +186,26 @@ const Header = () => {
                   type="text"
                   className="form-control py-2"
                   placeholder="Search Product Here..."
+                  value={searchQuery}
+                  onChange={handleChange}
                   aria-label="Search Product Here..."
                   aria-describedby="basic-addon2"
                 />
-                <span className="input-group-text p-3" id="basic-addon2">
+                <button
+                  onClick={handleSearch}
+                  className="input-group-text p-3"
+                  id="basic-addon2"
+                >
                   <BsSearch className="fs-6" />
-                </span>
+                </button>
+                {searchResults.map((product) => (
+                  <Link to={`/products2/${product.id}`} key={product.id}>
+                    <div>
+                      <h3>{product.name}</h3>
+                      {/* Display other relevant product information */}
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
             <div className="col-5">
@@ -176,10 +215,7 @@ const Header = () => {
                     to="/compare-product"
                     className="d-flex align-items-center gap-10 text-white"
                   >
-                    <img
-                      src={compareImg}
-                      alt=""
-                    />
+                    <img src={compareImg} alt="" />
                     <p className="mb-0">
                       Compare <br /> Products
                     </p>
@@ -190,10 +226,7 @@ const Header = () => {
                     to="./wishlist"
                     className="d-flex align-items-center gap-10 text-white"
                   >
-                    <img
-                      src={wishlistImg}
-                      alt="wishlist"
-                    />
+                    <img src={wishlistImg} alt="wishlist" />
                     <p className="mb-0">
                       Favourite <br /> wishlist
                     </p>
@@ -204,10 +237,7 @@ const Header = () => {
                     to="/login"
                     className="d-flex align-items-center gap-10 text-white"
                   >
-                    <img
-                      src={userImg}
-                      alt="user"
-                    />
+                    <img src={userImg} alt="user" />
                     <p className="mb-0">
                       Log in <br /> My Account
                     </p>
@@ -218,10 +248,7 @@ const Header = () => {
                     to="/cart"
                     className="d-flex align-items-center gap-10 text-white"
                   >
-                    <img
-                      src={cartImg}
-                      alt="cart"
-                    />
+                    <img src={cartImg} alt="cart" />
                     <div className="d-flex flex-column gap-10">
                       <span className="badge bg-white text-dark">0</span>
                       <p className="mb-0">PKR 500</p>
@@ -247,10 +274,7 @@ const Header = () => {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      <img
-                        src={menuImg}
-                        alt=""
-                      />
+                      <img src={menuImg} alt="" />
                       <span className="me-5 d-inline-block">
                         Shop Categories
                       </span>

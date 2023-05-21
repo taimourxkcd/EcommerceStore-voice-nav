@@ -5,7 +5,6 @@ import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import axios from "axios";
-import Cookies from "js-cookie";
 
 
 const Login = () => {
