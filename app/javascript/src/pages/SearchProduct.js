@@ -12,7 +12,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 import Container from "../components/Container";
 
-const SingleProduct2 = () => {
+const SingleProduct = () => {
 
   const location = useLocation();
   const searchResults = location.state.searchResults;
@@ -329,4 +329,4 @@ const SingleProduct2 = () => {
   );
 };
 
-export default SingleProduct2;
+export default SingleProduct;
