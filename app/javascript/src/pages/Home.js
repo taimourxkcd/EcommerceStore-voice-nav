@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
@@ -30,6 +30,16 @@ import Container from "../components/Container";
 import { services } from "../utils/Data";
 
 const Home = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  useEffect(() => {
+    console.log(selectedProduct); // Print the selected product to the console
+  }, [selectedProduct]);
+
+  const handleCardClick = (product) => {
+    setSelectedProduct(product); // Update the state with the selected product data
+  };
+
   return (
     <>
       <Container class1="home-wrapper-1 py-5">
@@ -204,10 +214,10 @@ const Home = () => {
       <Container class1="featured-wrapper py-5 home-wrapper-2">
         <div className="row">
           <h3 className="section-heading">Featurd Collection</h3>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard productId={28} onCardClick={handleCardClick} />
+          <ProductCard productId={29} onCardClick={handleCardClick} />
+          <ProductCard productId={28} onCardClick={handleCardClick} />
+          <ProductCard productId={28} onCardClick={handleCardClick} />
         </div>
       </Container>
 
@@ -277,10 +287,10 @@ const Home = () => {
         <div className="row">
           <h3 className="section-heading">Our Popular Products</h3>
           <div className="row">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={28} onCardClick={handleCardClick} />
           </div>
         </div>
       </Container>
