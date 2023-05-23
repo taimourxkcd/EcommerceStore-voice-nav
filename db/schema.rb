@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_20_121246) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_113310) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -115,6 +115,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_121246) do
     t.integer "brand_id"
     t.integer "rating"
     t.string "image_path"
+    t.string "brand"
+    t.string "image_path2"
+    t.string "image_path3"
+    t.string "image_path4"
     t.index ["slug"], name: "index_products_on_slug", unique: true
     t.check_constraint "color = ANY (ARRAY[0, 1, 2])", name: "check_color"
   end
