@@ -219,10 +219,10 @@ const handleCardClick = (product) => {
       <Container class1="featured-wrapper py-5 home-wrapper-2">
         <div className="row">
           <h3 className="section-heading">Featurd Collection</h3>
-          <ProductCard productId={28} onCardClick={handleCardClick} />
-          <ProductCard productId={29} onCardClick={handleCardClick} />
-          <ProductCard productId={30} onCardClick={handleCardClick} />
-          <ProductCard productId={31} onCardClick={handleCardClick} />
+          <ProductCard productId={7} onCardClick={handleCardClick} />
+          <ProductCard productId={7} onCardClick={handleCardClick} />
+          <ProductCard productId={7} onCardClick={handleCardClick} />
+          <ProductCard productId={7} onCardClick={handleCardClick} />
         </div>
       </Container>
 
@@ -292,10 +292,10 @@ const handleCardClick = (product) => {
         <div className="row">
           <h3 className="section-heading">Our Popular Products</h3>
           <div className="row">
-            <ProductCard productId={28} onCardClick={handleCardClick} />
-            <ProductCard productId={28} onCardClick={handleCardClick} />
-            <ProductCard productId={28} onCardClick={handleCardClick} />
-            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+            <ProductCard productId={7} onCardClick={handleCardClick} />
           </div>
         </div>
       </Container>

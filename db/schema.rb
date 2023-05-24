@@ -55,8 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_125923) do
     t.string "content_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product_id"
-    t.string "image_path"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -136,15 +134,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_125923) do
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
-  create_table "refresh_tokens", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["token"], name: "index_refresh_tokens_on_token"
-    t.index ["user_id"], name: "index_refresh_tokens_on_user_id"
-  end
-
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.string "address1"
@@ -173,5 +162,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_125923) do
 
   add_foreign_key "ratings", "products"
   add_foreign_key "ratings", "users"
-  add_foreign_key "refresh_tokens", "users"
 end
