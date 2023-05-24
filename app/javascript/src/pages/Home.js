@@ -221,8 +221,8 @@ const handleCardClick = (product) => {
           <h3 className="section-heading">Featurd Collection</h3>
           <ProductCard productId={28} onCardClick={handleCardClick} />
           <ProductCard productId={29} onCardClick={handleCardClick} />
-          <ProductCard productId={28} onCardClick={handleCardClick} />
-          <ProductCard productId={28} onCardClick={handleCardClick} />
+          <ProductCard productId={30} onCardClick={handleCardClick} />
+          <ProductCard productId={31} onCardClick={handleCardClick} />
         </div>
       </Container>
 

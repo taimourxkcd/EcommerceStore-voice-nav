@@ -21,19 +21,19 @@ const SingleProduct = () => {
   // const { productId } = useParams();
   const [product, setProduct] = useState(null);
 
-    const [productId, setProductId] = useState(null);
+  const [productId, setProductId] = useState(null);
 
-    useEffect(() => {
-      // Extract the product ID from the URL
-      const currentUrl = window.location.href;
-      const productId = currentUrl.split("/").pop();
+  useEffect(() => {
+    // Extract the product ID from the URL
+    const currentUrl = window.location.href;
+    const productId = currentUrl.split("/").pop();
 
-      // Set the product ID
-      setProductId(productId);
+    // Set the product ID
+    setProductId(productId);
 
-      // Log the product ID
-      console.log("Product ID:", productId);
-    }, []);
+    // Log the product ID
+    console.log("Product ID:", productId);
+  }, []);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -78,6 +78,8 @@ const SingleProduct = () => {
     return <div>Loading...</div>;
   }
 
+  console.log(product.data);
+
   return (
     <>
       <Meta title={"Single Product"} />
@@ -96,28 +98,28 @@ const SingleProduct = () => {
                 <div className="other-product-images d-flex flex-wrap gap-15">
                   <div>
                     <img
-                      src={product.image_path}
+                      src={product.image_path2}
                       alt="watch"
                       className="img-fluid"
                     />
                   </div>
                   <div>
                     <img
-                      src={product.image_path}
+                      src={product.image_path3}
                       alt="watch"
                       className="img-fluid"
                     />
                   </div>
                   <div>
                     <img
-                      src={product.image_path}
+                      src={product.image_path4}
                       alt="watch"
                       className="img-fluid"
                     />
                   </div>
                   <div>
                     <img
-                      src={product.image_path}
+                      src={product.image_path5}
                       alt="watch"
                       className="img-fluid"
                     />

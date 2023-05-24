@@ -45,7 +45,7 @@ module Api
       private
 
       def product_params
-        params.require(:product).permit(:title, :description, :price, :image_path, :image_path2, :image_path3, :image_path4, :customer_id, :category_id, :image_id, :color, :quantity, :sold, :rating)
+        params.require(:product).permit(:title, :description, :price, :image_path, :image_path2, :image_path5, :image_path6, :image_path3, :image_path4, :customer_id, :category_id, :image_id, :color, :quantity, :sold, :rating)
       end
 
       def authenticate_user!
