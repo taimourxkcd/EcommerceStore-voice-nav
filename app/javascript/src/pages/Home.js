@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
@@ -36,9 +37,13 @@ const Home = () => {
     console.log(selectedProduct); // Print the selected product to the console
   }, [selectedProduct]);
 
-  const handleCardClick = (product) => {
-    setSelectedProduct(product); // Update the state with the selected product data
-  };
+  // const handleCardClick = (product) => {
+  //   setSelectedProduct(product); // Update the state with the selected product data
+  // };
+const handleCardClick = (product) => {
+  onCardClick(product); // Pass the product data to the parent component
+  navigate(`/product/${product.id}`); // Redirect to the SingleProduct page with the selected product's ID
+};
 
   return (
     <>

@@ -14,14 +14,32 @@ import headphoneImg from "../../Public/images/headphone.jpg";
 import Container from "../components/Container";
 import axios from "axios";
 
+import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 const SingleProduct = () => {
-  const [ product, setProduct ] = useState({});
+  // const { productId } = useParams();
+  const [product, setProduct] = useState(null);
+
+    const [productId, setProductId] = useState(null);
+
+    useEffect(() => {
+      // Extract the product ID from the URL
+      const currentUrl = window.location.href;
+      const productId = currentUrl.split("/").pop();
+
+      // Set the product ID
+      setProductId(productId);
+
+      // Log the product ID
+      console.log("Product ID:", productId);
+    }, []);
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/v1/products/20"
+          `http://localhost:3000/api/v1/products/${productId}`
         );
         setProduct(response.data);
         console.log(response.data);
@@ -29,11 +47,15 @@ const SingleProduct = () => {
         console.log(error);
       }
     };
-    fetchProduct();
-  }, []);
-  
 
-  const imageSrc = product.image_path;
+    fetchProduct();
+  }, [productId]);
+
+  // ...
+
+  // Update the image source variable
+  const imageSrc = product && product.image_path;
+
   const props = {
     width: 400,
     height: 600,
@@ -52,7 +74,9 @@ const SingleProduct = () => {
     textField.remove();
   };
 
-  console.log("Product:", product.image_path);
+  if (product === null || Object.keys(product).length === 0) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -64,7 +88,7 @@ const SingleProduct = () => {
             <div className="main-product-image">
               <div>
                 {Object.keys(product).length > 0 && (
-                  <ReactImageZoom {...props} />
+                  <ReactImageZoom {...props} img={imageSrc ? imageSrc : ""} />
                 )}
               </div>
 
