@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import wishImg from "../../Public/images/wish.svg";
 import addcartImg from "../../Public/images/add-cart.svg";
 import viewImg from "../../Public/images/view.svg";
@@ -8,18 +9,17 @@ import prodcompareImg from "../../Public/images/prodcompare.svg";
 
 const ProductCard = ({ productId, onCardClick }) => {
   const [product, setProduct] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         if (productId) {
-          // Add this condition to check if productId is defined
           const response = await fetch(
             `http://localhost:3000/api/v1/products/${productId}`
           );
           const data = await response.json();
           setProduct(data);
-          onCardClick(data);
         }
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -32,6 +32,7 @@ const ProductCard = ({ productId, onCardClick }) => {
   const handleCardClick = () => {
     if (product) {
       onCardClick(product); // Pass the product data to the parent component
+      navigate(`/product/${product.id}`); // Redirect to the SingleProduct page with the selected product's ID
     }
   };
 
@@ -43,7 +44,11 @@ const ProductCard = ({ productId, onCardClick }) => {
 
   return (
     <div className={`col-3`}>
-      <div className="product-card position-relative">
+      <Link
+        to={`/product/${product.id}`}
+        className="product-card position-relative"
+        onClick={handleCardClick}
+      >
         <div className="wishlist-icon position-absolute">
           <button className="border-0 bg-transparent">
             <img src={wishImg} alt="wish" />
@@ -87,7 +92,7 @@ const ProductCard = ({ productId, onCardClick }) => {
             </button>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
