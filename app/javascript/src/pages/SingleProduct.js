@@ -22,10 +22,15 @@ const SingleProduct = () => {
   const [product, setProduct] = useState(null);
   const [productId, setProductId] = useState(null);
   const { addToCart } = useContext(CartContext);
+  const location = useLocation();
+
 
   const handleAddToCart = () => {
-    addToCart(product);
+     if (product) {
+       addToCart(product);
+     }
   };
+
 
   useEffect(() => {
     // Extract the product ID from the URL
@@ -37,7 +42,7 @@ const SingleProduct = () => {
 
     // Log the product ID
     console.log("Product ID:", productId);
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     const fetchProduct = async () => {
