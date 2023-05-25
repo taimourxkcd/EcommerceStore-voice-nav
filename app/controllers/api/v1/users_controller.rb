@@ -1,7 +1,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      before_action :authenticate_user!, only: [:show, :create]
+      before_action :authenticate_user!, only: [:show]
 
       def index
         users = User.all
@@ -58,15 +58,20 @@ module Api
       private
 
       def user_params
-        params.permit(:name, :email, :customer_id, :supplier_id, :phone, :password)
+        params.require(:user).permit(:name, :email, :customer_id, :supplier_id, :phone, :password)
       end
 
       def authenticate_user!
-        token = request.headers["Authorization"].split(" ").last
-        decoded_token = Auth.decode(token)
-        Rails.logger.info("decoded token: #{decoded_token}") # add this log to see decoded token
-        @current_user ||= User.find(decoded_token["user_id"])
-        Rails.logger.info("authenticated user: #{@current_user}") # add this log to see authenticated user
+        token = request.headers["Authorization"]
+        if token
+          token = token.split(" ").last
+          decoded_token = Auth.decode(token)
+          Rails.logger.info("decoded token: #{decoded_token}") # add this log to see decoded token
+          @current_user ||= User.find(decoded_token["user_id"])
+          Rails.logger.info("authenticated user: #{@current_user}") # add this log to see authenticated user
+        else
+          render json: { error: "Unauthorized" }, status: :unauthorized
+        end
       rescue JWT::VerificationError, JWT::DecodeError
         render json: { error: "Unauthorized" }, status: :unauthorized
       end
