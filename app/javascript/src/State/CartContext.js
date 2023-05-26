@@ -29,12 +29,28 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevCartItems) => [...prevCartItems, newItem]);
   };
 
+  const removeFromCart = (itemId) => {
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== itemId)
+    );
+  };
+
   const updateCartItems = (updatedItems) => {
     setCartItems(updatedItems);
   };
 
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+      setCartItems([]); // Clear the cart if token is null or undefined
+    }
+  }, []);
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, updateCartItems }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, updateCartItems }}
+    >
       {children}
     </CartContext.Provider>
   );

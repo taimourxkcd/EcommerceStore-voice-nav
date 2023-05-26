@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    reset_session
+    session.delete(:token) # Remove the token from the session
     render json: { status: 200, logged_out: true }
   end
 
