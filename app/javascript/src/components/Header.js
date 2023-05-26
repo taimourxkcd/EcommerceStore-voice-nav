@@ -208,11 +208,11 @@ const Header = () => {
               </div>
             </div>
             <div className="col-5">
-              <div className="header-upper-links d-flex align-items-center justify-content-between">
+              <div className="header-upper-links gap-1 d-flex align-items-center justify-content-between">
                 <div>
                   <Link
                     to="/compare-product"
-                    className="d-flex align-items-center gap-10 text-white"
+                    className="d-flex align-items-center text-white"
                   >
                     <img src={compareImg} alt="" />
                     <p className="mb-0">
@@ -252,6 +252,15 @@ const Header = () => {
                       <span className="badge bg-white text-dark">0</span>
                       <p className="mb-0">PKR 500</p>
                     </div>
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    to="/"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
+                    <img src={userImg} alt="user" />
+                    <p className="mb-0">Logout</p>
                   </Link>
                 </div>
               </div>

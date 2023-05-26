@@ -37,6 +37,10 @@ a {
   border-color: inherit;
 }
 
+.gap-1{
+  gap: 1px;
+}
+
 .gap-5 {
   gap: 5px;
 }
