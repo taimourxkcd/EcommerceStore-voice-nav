@@ -14,7 +14,6 @@
 #  updated_at               :datetime
 
 class Product < ApplicationRecord
-  enum color: [:red, :black, :green]
   belongs_to :brand, optional: true
 
   validates :description, presence: true

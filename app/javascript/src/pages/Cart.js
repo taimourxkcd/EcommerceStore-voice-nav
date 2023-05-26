@@ -10,13 +10,13 @@ import { CartContext } from "../State/CartContext";
 const Cart = () => {
   const { cartItems } = useContext(CartContext);
 
-   const calculateTotal = (cartItems) => {
-     let total = 0;
-     cartItems.forEach((item) => {
-       total += item.productId.price * item.quantity;
-     });
-     return total;
-   };
+  const calculateTotal = (cartItems) => {
+    let total = 0;
+    cartItems.forEach((item) => {
+      total += item.productId.price * item.quantity;
+    });
+    return total;
+  };
 
   // Group cart items by productId
   const groupedItems = cartItems.reduce((groups, item) => {
@@ -33,6 +33,10 @@ const Cart = () => {
   }, {});
 
   const uniqueItems = Object.values(groupedItems);
+ console.log(
+   "Colors:",
+   uniqueItems.map((item) => item.item.productId.color)
+ );
 
   return (
     <>

@@ -3,10 +3,12 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState(() => {
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
     const existingCartItems = localStorage.getItem("cartItems");
-    return existingCartItems ? JSON.parse(existingCartItems) : [];
-  });
+    setCartItems(existingCartItems ? JSON.parse(existingCartItems) : []);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -27,10 +29,13 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevCartItems) => [...prevCartItems, newItem]);
   };
 
+  const updateCartItems = (updatedItems) => {
+    setCartItems(updatedItems);
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, updateCartItems }}>
       {children}
     </CartContext.Provider>
   );
 };
-export default CartContext;
