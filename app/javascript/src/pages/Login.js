@@ -25,6 +25,11 @@ const Login = () => {
     });
   };
 
+   const handleLogout = () => {
+     sessionStorage.removeItem("token");
+     // Additional logout logic...
+   };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
