@@ -1,10 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
+import 'intersection-observer';
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
 import mainbannerImg from "../../Public/images/main-banner-1.jpg";
 import cartbanner1Img from "../../Public/images/catbanner-01.jpg";
@@ -32,6 +36,61 @@ import { services } from "../utils/Data";
 
 const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const navigate = useNavigate();
+
+  function handleDivClick(productId) {
+    navigate(`/product/${productId}`);
+  }
+
+  //Observer will observe the idsArray that we find
+
+  const [visibleElements, setVisibleElements] = useState([]);
+
+  const commands = [
+    {
+      command: "click",
+      callback: () => handleClick(),
+    },
+  ];
+
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
+
+  const divRefs = useRef([]);
+
+  function handleClick() {
+    const visibleDivs = visibleElements.map((id) => divRefs.current.find((ref) => ref.id === id));
+    const firstVisibleDiv = visibleDivs[0];
+    if (firstVisibleDiv) {
+      firstVisibleDiv.click();
+      // console.log(firstVisibleDiv);
+    }
+  };
+  useEffect(() => {
+    const options = {
+      root: null, // Use the viewport as the root element
+      rootMargin: '0px',
+      threshold: .8, // When at least 30% of the element is visible
+    };
+
+    const callback = (entries) => {
+      const visibleDivs = entries
+        .filter((entry) => entry.isIntersecting)
+        .map((entry) => entry.target.id);
+
+      setVisibleElements(visibleDivs);
+      console.log(visibleDivs);
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    divRefs.current.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  //Code ends here
 
   useEffect(() => {
     console.log(selectedProduct); // Print the selected product to the console
@@ -40,10 +99,10 @@ const Home = () => {
   // const handleCardClick = (product) => {
   //   setSelectedProduct(product); // Update the state with the selected product data
   // };
-const handleCardClick = (product) => {
-  onCardClick(product); // Pass the product data to the parent component
-  navigate(`/product/${product.id}`); // Redirect to the SingleProduct page with the selected product's ID
-};
+  const handleCardClick = (product) => {
+    onCardClick(product); // Pass the product data to the parent component
+    navigate(`/product/${product.id}`); // Redirect to the SingleProduct page with the selected product's ID
+  };
 
   return (
     <>
@@ -215,17 +274,35 @@ const handleCardClick = (product) => {
           </div>
         </div>
       </Container>
-
-      <Container class1="featured-wrapper py-5 home-wrapper-2">
-        <div className="row">
-          <h3 className="section-heading">Featurd Collection</h3>
-          <ProductCard productId={7} onCardClick={handleCardClick} />
-          <ProductCard productId={7} onCardClick={handleCardClick} />
-          <ProductCard productId={7} onCardClick={handleCardClick} />
-          <ProductCard productId={7} onCardClick={handleCardClick} />
-        </div>
-      </Container>
-
+      <div ref={(element) => (divRefs.current[0] = element)} id={0} onClick={() => handleDivClick(7)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
+          <div className="row">
+            <h3 className="section-heading">Featurd Collection</h3>
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+          </div>
+        </Container>
+      </div>
+      <div ref={(element) => (divRefs.current[1] = element)} id={1} onClick={() => handleDivClick(8)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
+          <div className="row">
+            <ProductCard productId={8} onCardClick={handleCardClick} />
+          </div>
+        </Container>
+      </div>
+      <div ref={(element) => (divRefs.current[2] = element)} id={2} onClick={() => handleDivClick(7)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
+          <div className="row">
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+          </div>
+        </Container>
+      </div>
+      <div ref={(element) => (divRefs.current[3] = element)} id={3} onClick={() => handleDivClick(7)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
+          <div className="row">
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+          </div>
+        </Container>
+      </div>
       <Container class1="famous-wrapper py-5 home-wrapper-2">
         <div className="row">
           <h3 className="section-heading">Famous Products</h3>
