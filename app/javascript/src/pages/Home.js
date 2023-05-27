@@ -365,17 +365,35 @@ const Home = () => {
         </div>
       </Container>
 
-      <Container class1="popular-wrapper py-5 home-wrapper-2">
-        <div className="row">
-          <h3 className="section-heading">Our Popular Products</h3>
+      <div ref={(element) => (divRefs.current[4] = element)} id={4} onClick={() => handleDivClick(7)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
           <div className="row">
-            <ProductCard productId={7} onCardClick={handleCardClick} />
-            <ProductCard productId={7} onCardClick={handleCardClick} />
-            <ProductCard productId={7} onCardClick={handleCardClick} />
+            <h3 className="section-heading">Popular Products</h3>
             <ProductCard productId={7} onCardClick={handleCardClick} />
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
+      <div ref={(element) => (divRefs.current[5] = element)} id={5} onClick={() => handleDivClick(8)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
+          <div className="row">
+            <ProductCard productId={8} onCardClick={handleCardClick} />
+          </div>
+        </Container>
+      </div>
+      <div ref={(element) => (divRefs.current[6] = element)} id={6} onClick={() => handleDivClick(8)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
+          <div className="row">
+            <ProductCard productId={8} onCardClick={handleCardClick} />
+          </div>
+        </Container>
+      </div>
+      <div ref={(element) => (divRefs.current[7] = element)} id={7} onClick={() => handleDivClick(8)}>
+        <Container class1="featured-wrapper py-5 home-wrapper-2">
+          <div className="row">
+            <ProductCard productId={8} onCardClick={handleCardClick} />
+          </div>
+        </Container>
+      </div>
 
       <Container class1="marque-wrapper home-wrapper-2 py-5">
         <div className="row">
