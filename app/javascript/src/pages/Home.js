@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 import BlogCard from "../components/BlogCard";
 import ProductCard from "../components/ProductCard";
 import SpecialProduct from "../components/SpecialProduct";
-import 'intersection-observer';
+import "intersection-observer";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -58,18 +58,23 @@ const Home = () => {
   const divRefs = useRef([]);
 
   function handleClick() {
-    const visibleDivs = visibleElements.map((id) => divRefs.current.find((ref) => ref.id === id));
+    const visibleDivs = visibleElements.map((id) =>
+      divRefs.current.find((ref) => ref.id === id)
+    );
     const firstVisibleDiv = visibleDivs[0];
     if (firstVisibleDiv) {
-      firstVisibleDiv.click();
-      // console.log(firstVisibleDiv);
+      firstVisibleDiv.click(); // Trigger click event on the visible product card
     }
+  }
+  const handleVoiceCommand = (product) => {
+    navigate(`/product/${product.id}`); // Redirect to the SingleProduct page with the selected product's ID
   };
+
   useEffect(() => {
     const options = {
       root: null, // Use the viewport as the root element
-      rootMargin: '0px',
-      threshold: .5, // When at least 30% of the element is visible
+      rootMargin: "0px",
+      threshold: 0.5, // When at least 30% of the element is visible
     };
 
     const callback = (entries) => {
@@ -96,20 +101,14 @@ const Home = () => {
     console.log(selectedProduct); // Print the selected product to the console
   }, [selectedProduct]);
 
-  // const handleCardClick = (product) => {
-  //   setSelectedProduct(product); // Update the state with the selected product data
-  // };
-  const handleCardClick = (product) => {
-    onCardClick(product); // Pass the product data to the parent component
-    navigate(`/product/${product.id}`); // Redirect to the SingleProduct page with the selected product's ID
+  const handleCardClick = (productId) => {
+    // onCardClick(product); // Pass the product data to the parent component
+    navigate(`/product/${productId}`);
   };
 
   return (
     <>
-
-      <div className="floating-number">
-        {JSON.stringify(visibleElements)}
-      </div>
+      <div className="floating-number">{JSON.stringify(visibleElements)}</div>
       <Container class1="home-wrapper-1 py-5">
         <div className="row">
           <div className="col-6">
@@ -278,35 +277,23 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      <div ref={(element) => (divRefs.current[0] = element)} id={0} onClick={() => handleDivClick(7)}>
+      <div
+        ref={(element) => (divRefs.current[0] = element)}
+        id={0}
+        onClick={() => handleCardClick(30)}
+      >
         <Container class1="featured-wrapper py-5 home-wrapper-2">
           <div className="row">
             <h3 className="section-heading">Featurd Collection</h3>
-            <ProductCard productId={7} onCardClick={handleCardClick} />
+            <ProductCard
+              productId={30}
+              handleCardClick={handleCardClick}
+              onVoiceCommand={handleVoiceCommand}
+            />
           </div>
         </Container>
       </div>
-      <div ref={(element) => (divRefs.current[1] = element)} id={1} onClick={() => handleDivClick(8)}>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <ProductCard productId={8} onCardClick={handleCardClick} />
-          </div>
-        </Container>
-      </div>
-      <div ref={(element) => (divRefs.current[2] = element)} id={2} onClick={() => handleDivClick(7)}>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <ProductCard productId={7} onCardClick={handleCardClick} />
-          </div>
-        </Container>
-      </div>
-      <div ref={(element) => (divRefs.current[3] = element)} id={3} onClick={() => handleDivClick(7)}>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <ProductCard productId={7} onCardClick={handleCardClick} />
-          </div>
-        </Container>
-      </div>
+
       <Container class1="famous-wrapper py-5 home-wrapper-2">
         <div className="row">
           <h3 className="section-heading">Famous Products</h3>
@@ -368,36 +355,6 @@ const Home = () => {
           <SpecialProduct />
         </div>
       </Container>
-
-      <div ref={(element) => (divRefs.current[4] = element)} id={4} onClick={() => handleDivClick(7)}>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <h3 className="section-heading">Popular Products</h3>
-            <ProductCard productId={7} onCardClick={handleCardClick} />
-          </div>
-        </Container>
-      </div>
-      <div ref={(element) => (divRefs.current[5] = element)} id={5} onClick={() => handleDivClick(8)}>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <ProductCard productId={8} onCardClick={handleCardClick} />
-          </div>
-        </Container>
-      </div>
-      <div ref={(element) => (divRefs.current[6] = element)} id={6} onClick={() => handleDivClick(8)}>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <ProductCard productId={8} onCardClick={handleCardClick} />
-          </div>
-        </Container>
-      </div>
-      <div ref={(element) => (divRefs.current[7] = element)} id={7} onClick={() => handleDivClick(8)}>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <ProductCard productId={8} onCardClick={handleCardClick} />
-          </div>
-        </Container>
-      </div>
 
       <Container class1="marque-wrapper home-wrapper-2 py-5">
         <div className="row">

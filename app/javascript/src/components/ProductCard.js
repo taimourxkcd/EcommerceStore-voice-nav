@@ -7,7 +7,7 @@ import addcartImg from "../../Public/images/add-cart.svg";
 import viewImg from "../../Public/images/view.svg";
 import prodcompareImg from "../../Public/images/prodcompare.svg";
 
-const ProductCard = ({ productId, onCardClick }) => {
+const ProductCard = ({ productId, onCardClick, onVoiceCommand }) => {
   const [product, setProduct] = useState(null);
   const navigate = useNavigate();
 
@@ -36,6 +36,13 @@ const ProductCard = ({ productId, onCardClick }) => {
     }
   };
 
+   const handleVoiceCommand = () => {
+     if (product) {
+       onVoiceCommand(product); // Pass the product data to the parent component when voice command is triggered
+       navigate(`/product/${product.id}`); // Redirect to the SingleProduct page with the selected product's ID
+     }
+   };
+
   if (!product) {
     return null; // Render a loading state or placeholder if product data is not available yet
   }
@@ -48,6 +55,7 @@ const ProductCard = ({ productId, onCardClick }) => {
         to={`/product/${product.id}`}
         className="product-card position-relative"
         onClick={handleCardClick}
+        onVoiceCommand={handleVoiceCommand}
       >
         <div className="wishlist-icon position-absolute">
           <button className="border-0 bg-transparent">
