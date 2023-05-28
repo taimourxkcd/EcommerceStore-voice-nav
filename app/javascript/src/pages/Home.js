@@ -277,19 +277,58 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      <div
-        ref={(element) => (divRefs.current[0] = element)}
-        id={0}
-        onClick={() => handleCardClick(30)}
-      >
+      <div>
         <Container class1="featured-wrapper py-5 home-wrapper-2">
           <div className="row">
             <h3 className="section-heading">Featurd Collection</h3>
-            <ProductCard
-              productId={30}
-              handleCardClick={handleCardClick}
-              onVoiceCommand={handleVoiceCommand}
-            />
+            {/* product 1 div */}
+            <div
+              ref={(element) => (divRefs.current[0] = element)}
+              id={0}
+              onClick={() => handleCardClick(30)}
+            >
+              <ProductCard
+                productId={30}
+                handleCardClick={handleCardClick}
+                onVoiceCommand={handleVoiceCommand}
+              />
+            </div>
+            {/* product 1 div */}
+            <div
+              ref={(element1) => (divRefs.current[1] = element1)}
+              id={1}
+              onClick={() => handleCardClick(30)}
+            >
+              <ProductCard
+                productId={30}
+                handleCardClick={handleCardClick}
+                onVoiceCommand={handleVoiceCommand}
+              />
+            </div>
+            {/* product 1 div */}
+            <div
+              ref={(element2) => (divRefs.current[2] = element2)}
+              id={2}
+              onClick={() => handleCardClick(32)}
+            >
+              <ProductCard
+                productId={32}
+                handleCardClick={handleCardClick}
+                onVoiceCommand={handleVoiceCommand}
+              />
+            </div>
+            {/* product 1 div */}
+            <div
+              ref={(element3) => (divRefs.current[3] = element3)}
+              id={3}
+              onClick={() => handleCardClick(33)}
+            >
+              <ProductCard
+                productId={33}
+                handleCardClick={handleCardClick}
+                onVoiceCommand={handleVoiceCommand}
+              />
+            </div>
           </div>
         </Container>
       </div>
@@ -353,6 +392,18 @@ const Home = () => {
           <SpecialProduct />
           <SpecialProduct />
           <SpecialProduct />
+        </div>
+      </Container>
+
+      <Container class1="popular-wrapper py-5 home-wrapper-2">
+        <div className="row">
+          <h3 className="section-heading">Our Popular Products</h3>
+          <div className="row">
+            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={28} onCardClick={handleCardClick} />
+          </div>
         </div>
       </Container>
 
