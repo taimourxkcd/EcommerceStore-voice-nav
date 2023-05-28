@@ -4,6 +4,7 @@ set -o errexit
 
 
 bundle install
+npm install
 # clean
 rm -rf public
 # build
