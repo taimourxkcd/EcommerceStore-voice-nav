@@ -106,6 +106,10 @@ const Home = () => {
 
   return (
     <>
+
+      <div className="floating-number">
+        {JSON.stringify(visibleElements)}
+      </div>
       <Container class1="home-wrapper-1 py-5">
         <div className="row">
           <div className="col-6">

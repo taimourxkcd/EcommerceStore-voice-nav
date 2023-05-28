@@ -23,8 +23,8 @@ const Checkout = () => {
   const [country, setCountry] = useState("");
   const [address, setAddress] = useState("");
 
-  function updateAddress(){
-    setAddress(`${street}, ${city}, ${country}.`);
+  function updateAddress() {
+    setAddress(`Street No. ${street}, ${city}, ${country}.`);
   }
 
 
@@ -42,7 +42,7 @@ const Checkout = () => {
       }
     },
     {
-      command: "street *",
+      command: "street number *",
       callback: (street) => {
         setStreet(street);
         updateAddress();
@@ -63,6 +63,12 @@ const Checkout = () => {
       }
     },
     {
+      command: "address done",
+      callback: () => {
+        updateAddress();
+      }
+    },
+    {
       command: "First Name *",
       callback: (fName) => {
         setNameInput(fName);
@@ -73,13 +79,13 @@ const Checkout = () => {
       callback: (lName) => {
         setLastNameInput(lName);
       }
-    }, 
+    },
     {
       command: "Enter",
       callback: () => {
         navigate("/");
       }
-    },    
+    },
   ];
 
   const { transcript, resetTranscript } = useSpeechRecognition({ commands });
