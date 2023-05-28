@@ -69,7 +69,7 @@ const Home = () => {
     const options = {
       root: null, // Use the viewport as the root element
       rootMargin: '0px',
-      threshold: .8, // When at least 30% of the element is visible
+      threshold: .5, // When at least 30% of the element is visible
     };
 
     const callback = (entries) => {

@@ -143,6 +143,24 @@ const Header = () => {
         });
       },
     },
+    {
+      command: "scroll down slightly",
+      callback: () => {
+        window.scrollTo({
+          top: window.pageYOffset + 200,
+          behavior: "smooth", // This makes the scrolling smooth instead of instant
+        });
+      },
+    },
+    {
+      command: "scroll up slightly",
+      callback: () => {
+        window.scrollTo({
+          top: window.pageYOffset - 200,
+          behavior: "smooth", // This makes the scrolling smooth instead of instant
+        });
+      },
+    },
   ];
 
   const { transcript, resetTranscript } = useSpeechRecognition({ commands });
