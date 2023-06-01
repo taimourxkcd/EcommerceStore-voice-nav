@@ -4,6 +4,10 @@ import Meta from "../components/Meta";
 import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import { useNavigate } from "react-router-dom";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
 import { CartContext } from "../State/CartContext";
 
@@ -37,6 +41,28 @@ const Cart = () => {
    "Colors:",
    uniqueItems.map((item) => item.item.productId.color)
  );
+
+  const navigate = useNavigate();
+
+
+  const commands = [
+    {
+      command: "Continue Shopping",
+      callback: () => {
+        navigate("/product");
+        resetTranscript();
+      }
+    },
+    {
+      command: "Check out",
+      callback: () => {
+        navigate("/checkout");
+        resetTranscript();
+      }
+    },
+  ];
+
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
 
   return (
     <>

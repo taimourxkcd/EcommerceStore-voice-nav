@@ -1,12 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import Meta from "../components/Meta";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import watchImg from "../../Public/images/watch.jpg";
 import Container from "../components/Container";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
+
+  const navigate = useNavigate();
+
+  const [nameInput, setNameInput] = useState("");
+  const [lastNameInput, setLastNameInput] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [houseNo, setHouseNo] = useState("");
+  const [country, setCountry] = useState("");
+  const [address, setAddress] = useState("");
+
+  function updateAddress() {
+    setAddress(`Street No. ${street}, ${city}, ${country}.`);
+  }
+
+
+  const commands = [
+    {
+      command: "house number *",
+      callback: (hNo) => {
+        setHouseNo(hNo);
+      }
+    },
+    {
+      command: "zip code *",
+      callback: (zCode) => {
+        setZipCode(zCode);
+      }
+    },
+    {
+      command: "street number *",
+      callback: (street) => {
+        setStreet(street);
+        updateAddress();
+      }
+    },
+    {
+      command: "city *",
+      callback: (city) => {
+        setCity(city);
+        updateAddress();
+      }
+    },
+    {
+      command: "country *",
+      callback: (country) => {
+        setCountry(country);
+        updateAddress();
+      }
+    },
+    {
+      command: "address done",
+      callback: () => {
+        updateAddress();
+      }
+    },
+    {
+      command: "First Name *",
+      callback: (fName) => {
+        setNameInput(fName);
+      }
+    },
+    {
+      command: "Last Name *",
+      callback: (lName) => {
+        setLastNameInput(lName);
+      }
+    },
+    {
+      command: "Enter",
+      callback: () => {
+        navigate("/");
+      }
+    },
+  ];
+
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
+
   return (
     <>
       <Meta title={"Checkout"} />
@@ -56,16 +139,18 @@ const Checkout = () => {
                 action=""
                 className="d-flex gap-15 flex-wrap justify-content-between"
               >
-                <div className="w-100">
+                {/* <div className="w-100">
                   <select name="" className="form-control form-select" id="">
                     <option value="" selected disabled>
                       Select Country
                     </option>
                   </select>
-                </div>
+                </div> */}
                 <div className="flex-grow-1">
                   <input
                     type="text"
+                    value={nameInput}
+                    onChange={(e) => setNameInput(e.target.value)}
                     placeholder="First Name"
                     className="form-control"
                   />
@@ -74,12 +159,16 @@ const Checkout = () => {
                   <input
                     type="text"
                     placeholder="Last Name"
+                    value={lastNameInput}
+                    onChange={(e) => setLastNameInput(e.target.value)}
                     className="form-control"
                   />
                 </div>
                 <div className="w-100">
                   <input
                     type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
                     placeholder="Address"
                     className="form-control"
                   />
@@ -87,27 +176,33 @@ const Checkout = () => {
                 <div className="w-100">
                   <input
                     type="text"
-                    placeholder="Apartment Suite etc"
+                    value={houseNo}
+                    onChange={(e) => setHouseNo(e.target.value)}
+                    placeholder="House Number"
                     className="form-control"
                   />
                 </div>
                 <div className="flex-grow-1">
                   <input
                     type="text"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
                     placeholder="City"
                     className="form-control"
                   />
                 </div>
-                <div className="flex-grow-1">
+                {/* <div className="flex-grow-1">
                   <select name="" className="form-control form-select" id="">
                     <option value="" selected disabled>
                       Select Province
                     </option>
                   </select>
-                </div>
+                </div> */}
                 <div className="flex-grow-1">
                   <input
                     type="text"
+                    value={zipCode}
+                    onChange={(e) => setZipCode(e.target.value)}
                     placeholder="Zip Code"
                     className="form-control"
                   />

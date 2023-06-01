@@ -38,7 +38,7 @@ const Header = () => {
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
-  };
+  };  
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
@@ -70,6 +70,7 @@ const Header = () => {
       command: "go to home",
       callback: ({ goHome }) => navigate("/"),
     },
+
     {
       command: "go to about",
       callback: ({ goFav }) => navigate("/about"),
@@ -142,6 +143,28 @@ const Header = () => {
           behavior: "smooth",
         });
       },
+    },
+    {
+      command: "scroll down slightly",
+      callback: () => {
+        window.scrollTo({
+          top: window.pageYOffset + 200,
+          behavior: "smooth", // This makes the scrolling smooth instead of instant
+        });
+      },
+    },
+    {
+      command: "scroll up slightly",
+      callback: () => {
+        window.scrollTo({
+          top: window.pageYOffset - 200,
+          behavior: "smooth", // This makes the scrolling smooth instead of instant
+        });
+      },
+    },
+    {
+      command: "Search For *",
+      callback: ({ search }) => navigate("/"),
     },
   ];
 
