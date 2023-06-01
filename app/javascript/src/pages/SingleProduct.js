@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
 import ProductCard from "../components/ProductCard";
@@ -13,15 +13,24 @@ import tvImg from "../../Public/images/tv.jpg";
 import headphoneImg from "../../Public/images/headphone.jpg";
 import Container from "../components/Container";
 import axios from "axios";
+import { CartContext } from "../State/CartContext";
 
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
-  // const { productId } = useParams();
   const [product, setProduct] = useState(null);
-
   const [productId, setProductId] = useState(null);
+  const { addToCart } = useContext(CartContext);
+  const location = useLocation();
+
+
+  const handleAddToCart = () => {
+     if (product) {
+       addToCart(product);
+     }
+  };
+
 
   useEffect(() => {
     // Extract the product ID from the URL
@@ -33,7 +42,7 @@ const SingleProduct = () => {
 
     // Log the product ID
     console.log("Product ID:", productId);
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -205,7 +214,11 @@ const SingleProduct = () => {
                       />
                     </div>
                     <div className="d-flex align-item-center gap-30 ms-5">
-                      <button className="button border-0" type="submit">
+                      <button
+                        className="button border-0"
+                        type="submit"
+                        onClick={handleAddToCart}
+                      >
                         Add to cart
                       </button>
                       <button to="" className="button signup">
