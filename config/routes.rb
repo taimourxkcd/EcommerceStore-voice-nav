@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get "/Users/:id", to: "users#getaUser"
       delete "/Users/:id", to: "users#deleteaUser"
       put "/Users/:id", to: "users#updateaUser"
+      get "/virtualTryOn", to: "users#virtualTryOn"
 
       # product
       get "/Products/all-products", to: "products#getAllProducts"

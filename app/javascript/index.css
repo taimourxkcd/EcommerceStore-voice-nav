@@ -16,6 +16,17 @@
   --color-1c1c1b: #1c1c1b;
 }
 
+.virtualTryOn {
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0.3;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+}
+
 .floating-number {
   position: fixed;
   bottom: 10px;
@@ -48,7 +59,7 @@ a {
   border-color: inherit;
 }
 
-.gap-1{
+.gap-1 {
   gap: 1px;
 }
 
@@ -796,7 +807,6 @@ reviews-wrapper h3 {
 }
 
 .main-product-image img {
-
   width: 100% !important;
   height: 600px !important;
   object-fit: cover;
@@ -862,7 +872,7 @@ t-review {
   margin-bottom: 0px;
 }
 
-.main-product-details a{
+.main-product-details a {
   font-size: 14px;
   color: var(--color);
 }
@@ -871,50 +881,49 @@ t-review {
 
 /* cart page starts here */
 
-.cart-header, 
-.cart-data{
+.cart-header,
+.cart-data {
   border-bottom: 1px solid #eaeaea;
 }
 
-.cart-header h4{
+.cart-header h4 {
   font-size: 13px;
   color: var(--color-777777);
 }
 
-.cart-col-1{
+.cart-col-1 {
   width: 40%;
 }
 
-.cart-col-1 p{
+.cart-col-1 p {
   color: var(--color-777777);
   font-size: 14px;
 }
 
-.cart-col-2{
+.cart-col-2 {
   width: 10%;
 }
-.cart-col-3{
+.cart-col-3 {
   width: 15%;
 }
-.cart-col-4{
+.cart-col-4 {
   width: 15%;
 }
 
-.cart-data h5.price{
+.cart-data h5.price {
   font-size: 14px;
   color: var(--color-1c1c1b);
 }
 /* cart page ends here */
 
-
 /* Shipping page starts here */
 
-.total{
+.total {
   font-size: 14px;
   color: var(--color-1c1c1b);
 }
 
-.total-price{
+.total-price {
   font-size: 16px;
   color: var(--color-777777);
 }
