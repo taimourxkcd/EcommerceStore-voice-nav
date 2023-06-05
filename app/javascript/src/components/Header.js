@@ -8,6 +8,7 @@ import userImg from "../../Public/images/user.svg";
 import cartImg from "../../Public/images/cart.svg";
 import menuImg from "../../Public/images/menu.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import "regenerator-runtime/runtime";
 
@@ -20,6 +21,19 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
+
+
+
+  const handleVirtualTryOnClick = () => {
+    axios.get('/api/v1/virtualTryOn')
+      .then(response => {
+        console.log(response.data.message); // Handle success case
+      })
+      .catch(error => {
+        console.error(error); // Handle error case
+      });
+  };
+
 
   const handleSearch = async () => {
     try {
@@ -335,6 +349,12 @@ const Header = () => {
                     <NavLink to="/product">Our Store</NavLink>
                     <NavLink to="blogs">Blogs</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
+                    <button
+                      className="virtualTryOn"
+                      onClick={handleVirtualTryOnClick}
+                    >
+                      Virtual Try On
+                    </button>
                   </div>
                 </div>
               </div>

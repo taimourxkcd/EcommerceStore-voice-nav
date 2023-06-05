@@ -55,6 +55,16 @@ module Api
         end
       end
 
+      def virtualTryOn
+        result = system("python #{Rails.root.join("lib", "main.py")}")
+
+        if result
+          render json: { message: "Python script executed successfully" }, status: :ok
+        else
+          render json: { message: "Failed to execute Python script" }, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def user_params
