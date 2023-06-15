@@ -21,14 +21,14 @@ const Header = () => {
   const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
 
-  const handleSearch = async () => {
+  const handleSearch = async (search) => {
     try {
       const response = await fetch("/products/search", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ query: searchQuery }),
+        body: JSON.stringify({ query: search }),
       });
       const data = await response.json();
       setSearchResults(data);
@@ -164,7 +164,7 @@ const Header = () => {
     },
     {
       command: "Search For *",
-      callback: ({ search }) => navigate("/"),
+      callback: ({ search }) => handleSearch(search),
     },
   ];
 

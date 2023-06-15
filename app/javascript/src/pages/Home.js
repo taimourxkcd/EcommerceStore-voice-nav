@@ -48,12 +48,12 @@ const Home = () => {
 
   const commands = [
     {
-      command: "click",
+      command: "select",
       callback: () => handleClick(),
     },
   ];
 
-  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
+  const { transcript, resetTranscript } = useSpeechRecognition();
 
   const divRefs = useRef([]);
 
@@ -277,61 +277,61 @@ const Home = () => {
           </div>
         </div>
       </Container>
-      <div>
-        <Container class1="featured-wrapper py-5 home-wrapper-2">
-          <div className="row">
-            <h3 className="section-heading">Featurd Collection</h3>
-            {/* product 1 div */}
-            <div
-              ref={(element) => (divRefs.current[0] = element)}
-              id={0}
-              onClick={() => handleCardClick(30)}
-            >
-              <ProductCard
-                productId={30}
-                handleCardClick={handleCardClick}
-                onVoiceCommand={handleVoiceCommand}
-              />
-            </div>
-            {/* product 1 div */}
-            <div
-              ref={(element1) => (divRefs.current[1] = element1)}
-              id={1}
-              onClick={() => handleCardClick(30)}
-            >
-              <ProductCard
-                productId={30}
-                handleCardClick={handleCardClick}
-                onVoiceCommand={handleVoiceCommand}
-              />
-            </div>
-            {/* product 1 div */}
-            <div
-              ref={(element2) => (divRefs.current[2] = element2)}
-              id={2}
-              onClick={() => handleCardClick(32)}
-            >
-              <ProductCard
-                productId={32}
-                handleCardClick={handleCardClick}
-                onVoiceCommand={handleVoiceCommand}
-              />
-            </div>
-            {/* product 1 div */}
-            <div
-              ref={(element3) => (divRefs.current[3] = element3)}
-              id={3}
-              onClick={() => handleCardClick(33)}
-            >
-              <ProductCard
-                productId={33}
-                handleCardClick={handleCardClick}
-                onVoiceCommand={handleVoiceCommand}
-              />
-            </div>
+
+      <Container class1="featured-wrapper py-5 home-wrapper-2">
+        <h3 className="section-heading">Featurd Collection</h3>
+        <div >
+          {/* product 1 div */}
+          <div className="product-card-wrapper"
+            ref={(element) => (divRefs.current[0] = element)}
+            id={0}
+            onClick={() => handleCardClick(7)}
+          >
+            <ProductCard
+              productId={7}
+              handleCardClick={handleCardClick}
+              onVoiceCommand={handleVoiceCommand}
+            />
           </div>
-        </Container>
-      </div>
+          {/* product 1 div */}
+          <div className="product-card-wrapper"
+            ref={(element1) => (divRefs.current[1] = element1)}
+            id={1}
+            onClick={() => handleCardClick(8)}
+          >
+            <ProductCard
+              productId={8}
+              handleCardClick={handleCardClick}
+              onVoiceCommand={handleVoiceCommand}
+            />
+          </div>
+          {/* product 1 div */}
+          <div className="product-card-wrapper"
+            ref={(element2) => (divRefs.current[2] = element2)}
+            id={2}
+            onClick={() => handleCardClick(7)}
+          >
+            <ProductCard
+              productId={7}
+              handleCardClick={handleCardClick}
+              onVoiceCommand={handleVoiceCommand}
+            />
+          </div>
+          {/* product 1 div */}
+          <div className="product-card-wrapper"
+            ref={(element3) => (divRefs.current[3] = element3)}
+            id={3}
+            onClick={() => handleCardClick(8)}
+          >
+            <ProductCard
+              productId={8}
+              handleCardClick={handleCardClick}
+              onVoiceCommand={handleVoiceCommand}
+            />
+          </div>
+        </div>
+      </Container>
+
 
       <Container class1="famous-wrapper py-5 home-wrapper-2">
         <div className="row">
@@ -399,10 +399,10 @@ const Home = () => {
         <div className="row">
           <h3 className="section-heading">Our Popular Products</h3>
           <div className="row">
-            <ProductCard productId={28} onCardClick={handleCardClick} />
-            <ProductCard productId={28} onCardClick={handleCardClick} />
-            <ProductCard productId={28} onCardClick={handleCardClick} />
-            <ProductCard productId={28} onCardClick={handleCardClick} />
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+            <ProductCard productId={8} onCardClick={handleCardClick} />
+            <ProductCard productId={7} onCardClick={handleCardClick} />
+            <ProductCard productId={8} onCardClick={handleCardClick} />
           </div>
         </div>
       </Container>
