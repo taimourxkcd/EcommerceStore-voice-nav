@@ -1,84 +1,39 @@
 
-# 📖 Ecommerce Store with Voice Navigation <a name="about-project"></a>
-
-**Ecommerce Store with Voice Navigation** is one of the interesting projects I have had to work on as a developer. This project was developed using react.
-## 🛠 Built With <a name="built-with"> React Js and Redux</a>
+#  Ecommerce Store with Voice Navigation <a name="about-project"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>Frontend</summary>
+
   <ul>
     <li>React</li>
-    <li>Redux</li>
-  </ul>
-</details>
-
-<details>
-  <summary>Backend</summary>
-  <ul>
     <li>Ruby on Rails</li>
+    <li>PostgreSQL</li>
+
   </ul>
-</details>
-<!-- //comment -->
 
+### USING THE CODE
+- Make sure you have WSL 2 installed and working. NOTE: ``` rails db:create ``` doesn't work in WSL 1
+-  Install PostgreSQL database and make yourself super user and have all the
+necessary privileges to create Database.
+- Install the latest version of node.
+- Install Ruby version 3.0.2.
+- Install the latest version of rails.
+- Also make sure to have package manager yarn and npm installed.
+- Run the command ```git clone git@github.com:taimourz/EcommerceStore-voice-nav.git```
+- Navigate inside the repository folder run bundle install and then yarn install. This
+will install all the necessary ruby and react libraries needed for the project
+- Open 2 tabs and run the following commands in them separately, These
+commands will make sure to run your server and build all the necessary css and
+javascript needed for the project.
+  - ``` bin/dev ```
+  - ``` yarn build –watch ```
+- open localhost 3000 and you will have a running web app
 
-## 💻 Getting Started <a name="getting-started"></a>
-
-To get a local copy up and running, follow these steps.
-
-### Prerequisites
-
-In order to run this project you need to run:
-
-
-```sh
- this section will be updated soon
-```
-
-
-### Setup
-
-Clone this repository to your desired folder:
-
-
-```sh
-  this section will be updated soon
-```
-
-### Install
-
-Install this project with:
-
-
-```sh
- this section will be updated soon
-```
-
-
-### Usage
-
-To run the project, execute the following command:
-
-
-```sh
- this section will be updated soon
-```
-
-### Testing
-
-To run the project, execute the following command:
-
-```
-  this section will be updated soon
-```
-
-### Deployment
-
-You can deploy this project using:
-```sh
- this section will be updated soon
-```
+### Deployment on Render
+- create an account on render.com
+- clone this project and push it on your own github repo.
+- create a rails master key in your local development environment and save it there and also copy and paste that in Render.com
+- connect your repo with render.com, it would automatically deploy your web there 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
