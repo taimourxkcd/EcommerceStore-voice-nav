@@ -8,6 +8,7 @@
     <li>React</li>
     <li>Ruby on Rails</li>
     <li>PostgreSQL</li>
+    <li>Bootstrap 5</li>
 
   </ul>
 
